@@ -1,7 +1,8 @@
+import { useEffect, useMemo, useState } from 'react';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
 import { ThemeProvider } from 'styled-components';
-import { theme } from '#assets/styles/theme';
+import theme from '#assets/styles/theme';
 import Layout from '#components/Layout';
 import '#assets/scss/main.scss';
 import { Provider } from 'react-redux';
@@ -10,7 +11,7 @@ import store from '#store/store';
 const App = ({ Component, pageProps }: AppProps): React.ReactElement => {
   return (
     <Provider store={store}>
-      <ThemeProvider theme={theme}>
+      <ThemeProvider theme={theme.light}>
         <Head>
           <meta charSet='utf-8' />
 
