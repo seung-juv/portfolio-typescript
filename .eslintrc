@@ -1,0 +1,95 @@
+{
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "airbnb",
+    "plugin:prettier/recommended"
+  ],
+  "plugins": ["eslint-plugin-no-inline-styles", "eslint-plugin-import", "babel-plugin-root-import"],
+  "rules": {
+    "no-inline-styles/no-inline-styles": true,
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "json": "always",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+    ],
+    "react/prop-types": 0,
+    "react/jsx-wrap-multilines": 0,
+    "import/no-unresolved": [
+      2,
+      { "commonjs": true, "amd": true, "ignore": ["/"], "caseSensitive": false }
+    ],
+    "no-param-reassign": [
+      2,
+      {
+        "ignorePropertyModificationsFor": ["^draft"]
+      }
+    ],
+    "react/jsx-one-expression-per-line": 0,
+    "no-unused-expressions": 0,
+    "one-var": 0,
+    "no-underscore-dangle": 0,
+    "no-plusplus": 0,
+    "react-hooks/exhaustive-deps": 1,
+    "import/prefer-default-export": 0,
+    "no-restricted-syntax": 0,
+    "no-continue": 0,
+    "prefer-promise-reject-errors": 0,
+    "react/no-this-in-sfc": 0,
+    "no-bitwise": 0,
+    "no-shadow": 0,
+    "react-native/split-platform-components": 0,
+    "no-throw-literal": 0
+  },
+  "settings": {
+    "import/resolver": {
+      "babel-plugin-root-import": [
+        {
+          "rootPathSuffix": "./src/assets",
+          "rootPathPrefix": "#assets/"
+        },
+        {
+          "rootPathSuffix": "./src/components",
+          "rootPathPrefix": "#components/"
+        },
+        {
+          "rootPathSuffix": "./src/pages",
+          "rootPathPrefix": "#pages/"
+        },
+        {
+          "rootPathSuffix": ".",
+          "rootPathPrefix": "#/"
+        }
+      ],
+      "node": {
+        "extensions": [
+          ".js",
+          ".jsx",
+          ".ts",
+          ".tsx",
+          ".android.js",
+          ".android.jsx",
+          ".android.ts",
+          ".android.tsx",
+          ".ios.js",
+          ".ios.jsx",
+          ".ios.ts",
+          ".ios.tsx",
+          ".web.js",
+          ".web.jsx",
+          ".web.ts",
+          ".web.tsx",
+          ".d.ts",
+          ".d"
+        ]
+      }
+    }
+  }
+}
