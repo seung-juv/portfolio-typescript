@@ -1,5 +1,5 @@
 import Head from 'next/head';
 
-export default () => {
+export default (): React.ReactElement => {
   return <div></div>;
 };
