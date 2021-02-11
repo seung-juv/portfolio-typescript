@@ -64,6 +64,10 @@
           "rootPathPrefix": "#pages/"
         },
         {
+          "rootPathSuffix": "./src/store",
+          "rootPathPrefix": "#store/"
+        },
+        {
           "rootPathSuffix": ".",
           "rootPathPrefix": "#/"
         }
