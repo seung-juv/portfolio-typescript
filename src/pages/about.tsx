@@ -1,7 +1,6 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { ThemeType } from 'styled-components';
 import ProfileImg from '#assets/images/profile_img.jpg';
-import { ThemeType } from '#assets/styles/styled';
 
 const Container = styled.div`
   width: 60%;

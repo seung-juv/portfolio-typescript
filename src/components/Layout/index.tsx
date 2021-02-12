@@ -1,4 +1,6 @@
+import Copyright from './Copyright';
 import Header from './Header';
+import MenuButton from './MenuButton';
 
 interface LayoutType {
   children: React.ReactNode;
@@ -7,8 +9,10 @@ interface LayoutType {
 const Layout = ({ children }: LayoutType): React.ReactElement => {
   return (
     <div>
+      <Header />
+      <MenuButton />
+      <Copyright />
       <main>
-        <Header />
         {children}
         <footer></footer>
       </main>

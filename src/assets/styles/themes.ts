@@ -1,4 +1,4 @@
-import { ThemeType } from './styled';
+import { ThemeType } from 'styled-components';
 
 export default <{ dark: ThemeType; light: ThemeType }>{
   dark: {

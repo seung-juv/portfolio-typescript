@@ -1,6 +1,6 @@
-import themes from '#assets/styles/theme';
+import themes from '#assets/styles/themes';
 import { useEffect, useState } from 'react';
-import { ThemeProvider } from 'styled-components';
+import { ThemeProvider, ThemeType } from 'styled-components';
 import useDarkMode from 'use-dark-mode';
 
 interface ProvidersType {
@@ -12,7 +12,7 @@ const Providers = ({ children }: ProvidersType): React.ReactElement => {
   const { value: isDark } = useDarkMode(undefined, {
     storageKey: 'dark-mode',
   });
-  const theme = isDark ? themes.dark : themes.light;
+  const theme: ThemeType = isDark ? themes.dark : themes.light;
 
   useEffect(() => {
     setMounted(true);

@@ -1,6 +1,6 @@
-import { ThemeType } from '#assets/styles/styled';
 import React from 'react';
 import styled from 'styled-components';
+import useDarkMode from 'use-dark-mode';
 import { Favicon, Moon } from '../../Icons';
 
 const Container = styled.header`
@@ -30,19 +30,19 @@ const LogoContainer = styled.h1`
   margin-bottom: 3rem;
 `;
 
-const ScrollLineContainer = styled.div<{ theme: ThemeType }>`
+const ScrollLineContainer = styled.div`
   width: 1px;
   flex: 1;
   overflow: hidden;
   position: relative;
-  background-color: ${({ theme }) => theme.blackColor}15;
+  background-color: ${({ theme }) => theme.backgroundColor}15;
   margin-bottom: 3rem;
   @media screen and (max-width: 768px) {
     display: none;
   }
 `;
 
-const ScrollLine = styled.span<{ theme: ThemeType }>`
+const ScrollLine = styled.span`
   display: block;
   width: 100%;
   height: 100%;
@@ -50,7 +50,7 @@ const ScrollLine = styled.span<{ theme: ThemeType }>`
   background-color: ${({ theme }) => theme.blackColor};
 `;
 
-const DarkButton = styled.button<{ theme: ThemeType }>`
+const DarkButton = styled.button`
   width: 3.4rem;
   height: 3.4rem;
   border-radius: 3.4rem;
@@ -65,6 +65,9 @@ const DarkButton = styled.button<{ theme: ThemeType }>`
 `;
 
 const Header = (): React.ReactElement => {
+  const { toggle } = useDarkMode(undefined, {
+    storageKey: 'dark-mode',
+  });
   return (
     <Container>
       <LogoContainer>
@@ -75,7 +78,7 @@ const Header = (): React.ReactElement => {
       <ScrollLineContainer>
         <ScrollLine />
       </ScrollLineContainer>
-      <DarkButton>
+      <DarkButton onClick={toggle}>
         <Moon size={1.8} />
       </DarkButton>
     </Container>
