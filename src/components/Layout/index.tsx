@@ -11,11 +11,11 @@ const Layout = ({ children }: LayoutType): React.ReactElement => {
     <div>
       <Header />
       <MenuButton />
-      <Copyright />
       <main>
         {children}
         <footer></footer>
       </main>
+      <Copyright />
     </div>
   );
 };
