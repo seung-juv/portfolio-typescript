@@ -2,6 +2,12 @@
 
 * {
   box-sizing: border-box;
+  &::before {
+    box-sizing: border-box;
+  }
+  &::after {
+    box-sizing: border-box;
+  }
 }
 
 html,
@@ -111,7 +117,7 @@ body,
 html {
   line-height: 1;
   font-size: 10px;
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: 'Roboto', 'Noto Sans KR', sans-serif;
   letter-spacing: -0.05rem;
 }
 
@@ -157,10 +163,10 @@ q {
 }
 
 button {
-  background-color: transparent;
-  outline: none;
+  background: 0 0;
   border: 0;
   cursor: pointer;
+  outline: none;
 }
 
 ol,
@@ -176,4 +182,17 @@ textarea {
   background-color: transparent;
   outline: none;
   border: 0;
+}
+
+textarea {
+  font-family: inherit;
+  overflow: auto;
+  outline: none;
+  box-shadow: none;
+  resize: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
 }

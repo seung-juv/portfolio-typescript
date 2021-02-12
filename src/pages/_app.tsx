@@ -11,7 +11,6 @@ const App: React.FC<AppProps> = ({ Component, pageProps }: AppProps) => {
     <Providers>
       <Head>
         <meta charSet='utf-8' />
-
         <title>Seung Ju | Portfolio</title>
         <meta
           name='viewport'
