@@ -1,4 +1,3 @@
-import { useEffect, useMemo, useState } from 'react';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
 import { ThemeProvider } from 'styled-components';
@@ -7,11 +6,12 @@ import Layout from '#components/Layout';
 import '#assets/scss/main.scss';
 import { Provider } from 'react-redux';
 import store from '#store/store';
+import GloablStyles from '#assets/styles/GloablStyles';
 
 const App = ({ Component, pageProps }: AppProps): React.ReactElement => {
   return (
     <Provider store={store}>
-      <ThemeProvider theme={theme.light}>
+      <ThemeProvider theme={store.getState().darkmode ? theme.dark : theme.light}>
         <Head>
           <meta charSet='utf-8' />
 
@@ -27,6 +27,7 @@ const App = ({ Component, pageProps }: AppProps): React.ReactElement => {
           <link ref='canonical' href='https://seung-ju.com' />
         </Head>
         <Layout>
+          <GloablStyles />
           <Component {...pageProps} />
         </Layout>
       </ThemeProvider>

@@ -1,15 +1,13 @@
-import { configureStore, createSlice } from '@reduxjs/toolkit';
+import { configureStore, Store } from '@reduxjs/toolkit';
+import { useDispatch } from 'react-redux';
+import rootReducer from './reducers';
 
-const portfolio = createSlice({
-  name: 'darkmode',
-  initialState: false,
-  reducers: {
-    toggleDarkmode: state => {
-      state = !state;
-    },
-  },
-});
+const store: Store = configureStore({ reducer: rootReducer });
 
-export const { toggleDarkmode } = portfolio.actions;
+export type RootState = ReturnType<typeof store.getState>;
 
-export default configureStore({ reducer: portfolio.reducer });
+export type AppDispatch = typeof store.dispatch;
+
+export const useAppDispatch = () => useDispatch<AppDispatch>();
+
+export default store;

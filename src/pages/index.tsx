@@ -1,3 +1,5 @@
-export default (): React.ReactElement => {
+const Home = (): React.ReactElement => {
   return <div></div>;
 };
+
+export default Home;
