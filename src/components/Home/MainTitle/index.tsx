@@ -14,7 +14,6 @@ const Container = styled.div`
 const Title = styled.span`
   font-size: 1.6rem;
   color: ${({ theme }) => theme.blackColor};
-  height: 2rem;
   overflow: hidden;
   margin: 1rem 0;
 `;
@@ -22,7 +21,6 @@ const Title = styled.span`
 const Content = styled.span`
   font-size: 1.2rem;
   font-weight: 300;
-  height: 1.4rem;
   overflow: hidden;
   color: ${({ theme }) => theme.lightGreyColor};
 `;
