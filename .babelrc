@@ -1,7 +1,7 @@
 {
   "presets": ["next/babel"],
   "plugins": [
-    ["styled-components", { "ssr": true }],
+    ["styled-components", { "ssr": true, "displayName": true }],
     [
       "@babel/plugin-proposal-decorators",
       {
@@ -24,6 +24,10 @@
           {
             "rootPathSuffix": "./src/pages",
             "rootPathPrefix": "#pages/"
+          },
+          {
+            "rootPathSuffix": "./src/hooks",
+            "rootPathPrefix": "#hooks/"
           },
           {
             "rootPathSuffix": "./src/store",

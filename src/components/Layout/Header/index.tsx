@@ -1,11 +1,7 @@
 import { ThemeType } from '#assets/styles/styled';
-import React, { useCallback, useEffect, useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { Favicon, Moon } from '../../Icons';
-
-interface HeaderType {
-  onToggleDarkmode: Function;
-}
 
 const Container = styled.header`
   width: 6rem;
@@ -68,24 +64,7 @@ const DarkButton = styled.button<{ theme: ThemeType }>`
   }
 `;
 
-const Header = ({ onToggleDarkmode }: HeaderType): React.ReactElement => {
-  const [scrollValue, setScrollValue] = useState(-100);
-
-  const getScrollValue = useCallback(() => {
-    const scrollPosition = document.documentElement.scrollTop;
-    const windowHeight = window.innerHeight;
-    const fullHeight = document.body.scrollHeight;
-    const scrollWidth = -((scrollPosition / (windowHeight - fullHeight)) * 100 + 100);
-    if (scrollPosition + windowHeight >= fullHeight) setScrollValue(0);
-    else setScrollValue(scrollWidth);
-  }, []);
-
-  useEffect(() => {
-    getScrollValue();
-    window.addEventListener('scroll', getScrollValue);
-    return window.addEventListener('scroll', getScrollValue);
-  }, []);
-
+const Header = (): React.ReactElement => {
   return (
     <Container>
       <LogoContainer>
@@ -94,13 +73,9 @@ const Header = ({ onToggleDarkmode }: HeaderType): React.ReactElement => {
         </a>
       </LogoContainer>
       <ScrollLineContainer>
-        <ScrollLine
-          style={{
-            top: scrollValue,
-          }}
-        />
+        <ScrollLine />
       </ScrollLineContainer>
-      <DarkButton onClick={() => onToggleDarkmode()}>
+      <DarkButton>
         <Moon size={1.8} />
       </DarkButton>
     </Container>

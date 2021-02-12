@@ -1,13 +1,20 @@
-import { configureStore, Store } from '@reduxjs/toolkit';
+import { getDefaultMiddleware, configureStore } from '@reduxjs/toolkit';
+import { createWrapper, MakeStore } from 'next-redux-wrapper';
 import { useDispatch } from 'react-redux';
-import rootReducer from './reducers';
+import rootReducer, { RootState } from './rootReducer';
 
-const store: Store = configureStore({ reducer: rootReducer });
+const store = configureStore({
+  reducer: rootReducer,
+  devTools: process.env.NODE_ENV === 'development',
+  middleware: [...getDefaultMiddleware()],
+});
 
-export type RootState = ReturnType<typeof store.getState>;
+export type AppStore = typeof store;
 
 export type AppDispatch = typeof store.dispatch;
 
 export const useAppDispatch = () => useDispatch<AppDispatch>();
 
-export default store;
+const makeStore: MakeStore<RootState> = () => store;
+
+export const wrapper = createWrapper<RootState>(makeStore);

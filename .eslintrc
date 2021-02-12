@@ -64,6 +64,10 @@
           "rootPathPrefix": "#pages/"
         },
         {
+          "rootPathSuffix": "./src/hooks",
+          "rootPathPrefix": "#hooks/"
+        },
+        {
           "rootPathSuffix": "./src/store",
           "rootPathPrefix": "#store/"
         },
