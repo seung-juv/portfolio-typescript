@@ -6,7 +6,7 @@ const Container = styled.h1`
   margin-bottom: 3rem;
 `;
 
-const Logo = () => {
+const Logo = (): React.ReactElement => {
   return (
     <Container>
       <Link href='/'>

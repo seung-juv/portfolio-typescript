@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 import { Favicon } from '#components/Icons';
 import GlobalNavigationBar from './GlobalNavigationBar';
@@ -22,8 +21,8 @@ const Container = styled.div`
 const Shadow = styled.div`
   opacity: 0.05;
   position: absolute;
-  bottom: -5%;
-  right: 0;
+  bottom: -15%;
+  right: -5%;
   @media screen and (max-width: 425px) {
     width: 95vw;
     height: 95vw;
@@ -35,7 +34,7 @@ const Menu = (): React.ReactElement => {
     <Container>
       <GlobalNavigationBar />
       <Shadow>
-        <Favicon size={80} />
+        <Favicon size={100} />
       </Shadow>
     </Container>
   );

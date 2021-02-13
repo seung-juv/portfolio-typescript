@@ -1,5 +1,5 @@
 import { Facebook, Github, GooglePlus, Instagram } from '#components/Icons';
-import React, { useMemo } from 'react';
+import { useMemo } from 'react';
 import styled from 'styled-components';
 import Social, { SocialProps } from './Social';
 

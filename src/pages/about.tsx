@@ -1,4 +1,3 @@
-import React from 'react';
 import styled, { ThemeType } from 'styled-components';
 
 const Container = styled.div`

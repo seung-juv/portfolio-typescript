@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 import Socials from './Socials';
 import Navigations from './Navigations';
