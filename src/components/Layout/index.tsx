@@ -1,3 +1,4 @@
+import { useCallback, useState } from 'react';
 import styled from 'styled-components';
 import Footer from './Footer';
 import Header from './Header';
@@ -14,12 +15,14 @@ const Wrapper = styled.div`
 `;
 
 const Layout = ({ children }: LayoutType): React.ReactElement => {
+  const [isVisibleMenu, setIsVisibleMenu] = useState(false);
+  const toggleMenu = useCallback(() => setIsVisibleMenu(prevState => !prevState), []);
   return (
     <Providers>
-      <Menu />
+      {isVisibleMenu ? <Menu /> : null}
       <Wrapper>
         <Header />
-        <MenuButton />
+        <MenuButton onClick={toggleMenu} />
         <main>{children}</main>
         <Footer />
       </Wrapper>
