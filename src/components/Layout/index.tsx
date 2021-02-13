@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import Footer from './Footer';
 import Header from './Header';
+import Menu from './Menu';
 import MenuButton from './Menu/MenuButton';
 import Providers from './Providers';
 
@@ -15,6 +16,7 @@ const Wrapper = styled.div`
 const Layout = ({ children }: LayoutType): React.ReactElement => {
   return (
     <Providers>
+      <Menu />
       <Wrapper>
         <Header />
         <MenuButton />

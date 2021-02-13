@@ -1,28 +1,26 @@
 import React from 'react';
 import styled from 'styled-components';
-import Navigation, { NavigationProps } from './Navigation';
-
-interface ItemsType extends NavigationProps {}
+import Socials from './Socials';
+import Navigations from './Navigations';
 
 interface GlobalNavigationBarProps {
-  items: Array<ItemsType>;
   containerStyle?: React.CSSProperties;
 }
 
-const Container = styled.ul`
+const Container = styled.nav`
+  height: 100%;
   position: relative;
   z-index: 10;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
 `;
 
-const GlobalNavigationBar = ({
-  items,
-  containerStyle,
-}: GlobalNavigationBarProps): React.ReactElement => {
+const GlobalNavigationBar = ({ containerStyle }: GlobalNavigationBarProps): React.ReactElement => {
   return (
     <Container style={containerStyle}>
-      {items?.map((item, index) => (
-        <Navigation key={index} {...item} />
-      ))}
+      <Navigations />
+      <Socials />
     </Container>
   );
 };

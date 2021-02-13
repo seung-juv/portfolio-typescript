@@ -1,6 +1,6 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import { Prismabook, Favicon, Github, GooglePlus, Instagram } from '#components/Icons';
+import { Favicon } from '#components/Icons';
 import GlobalNavigationBar from './GlobalNavigationBar';
 
 const Container = styled.div`
@@ -22,20 +22,6 @@ const Container = styled.div`
   }
 `;
 
-const SocialContainer = styled.ul`
-  display: flex;
-  position: relative;
-  z-index: 10;
-`;
-
-const Social = styled.li`
-  &:not(:last-child) {
-    margin-right: 2rem;
-  }
-`;
-
-const SocialLink = styled.a``;
-
 const Shadow = styled.div`
   width: 60rem;
   height: 60rem;
@@ -56,58 +42,12 @@ const Shadow = styled.div`
   }
 `;
 
-const Menu = () => {
-  const navigationItems = useMemo(
-    () => [
-      {
-        href: '/',
-        label: 'Home',
-      },
-      {
-        href: '/works',
-        label: 'Works',
-      },
-      {
-        href: '/about',
-        label: 'About',
-      },
-      {
-        href: '/contact',
-        label: 'Contact',
-      },
-    ],
-    []
-  );
+const Menu = (): React.ReactElement => {
   return (
     <Container>
-      <GlobalNavigationBar items={[...navigationItems]} />
-      <SocialContainer>
-        <Social>
-          <SocialLink href='https://github.com/kingsky32' target='_blank'>
-            <Github />
-          </SocialLink>
-        </Social>
-        <Social>
-          <SocialLink
-            href='https://www.facebook.com/profile.php?id=100004252961772'
-            target='_blank'
-          >
-            <Prismabook />
-          </SocialLink>
-        </Social>
-        <Social>
-          <SocialLink href='https://www.instagram.com/kingsky32/' target='_blank'>
-            <Instagram />
-          </SocialLink>
-        </Social>
-        <Social>
-          <SocialLink href='mailto:kingsky32@gmail.com'>
-            <GooglePlus />
-          </SocialLink>
-        </Social>
-      </SocialContainer>
+      <GlobalNavigationBar />
       <Shadow>
-        <Favicon />
+        <Favicon size={60} />
       </Shadow>
     </Container>
   );

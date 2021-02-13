@@ -1,9 +1,10 @@
 import Link from 'next/link';
 import React from 'react';
 import styled from 'styled-components';
+import { Url } from 'url';
 
 export interface NavigationProps {
-  href: string;
+  href: string | Url;
   label: string;
   containerStyle?: React.CSSProperties;
 }
@@ -11,14 +12,14 @@ export interface NavigationProps {
 const Container = styled.li`
   font-size: 8rem;
   font-weight: 600;
-  color: ${({ theme }) => theme.blackColor};
   &:not(:last-child) {
     margin-bottom: 5rem;
   }
-  &:not(:hover) {
-    opacity: 0.5;
-  }
   a {
+    &:not(:hover) {
+      opacity: 0.5;
+    }
+    color: ${({ theme }) => theme.blackColor};
     position: relative;
     &:hover {
       &::after {
