@@ -1,8 +1,6 @@
 import { createGlobalStyle, ThemeType } from 'styled-components';
-import reset from 'styled-reset';
 
 export default createGlobalStyle<{ theme: ThemeType }>`
-  ${reset};
   html, body {
     line-height: 1;
     font-size: 10px;

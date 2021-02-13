@@ -1,3 +1,4 @@
+import GloablStyles from '#assets/styles/GloablStyles';
 import themes from '#assets/styles/themes';
 import { useEffect, useState } from 'react';
 import { ThemeProvider, ThemeType } from 'styled-components';
@@ -18,7 +19,12 @@ const Providers = ({ children }: ProvidersType): React.ReactElement => {
     setMounted(true);
   }, []);
 
-  const body = <ThemeProvider theme={theme}>{children}</ThemeProvider>;
+  const body = (
+    <ThemeProvider theme={theme}>
+      <GloablStyles />
+      {children}
+    </ThemeProvider>
+  );
 
   if (!mounted) {
     return <div style={{ visibility: 'hidden' }}></div>;

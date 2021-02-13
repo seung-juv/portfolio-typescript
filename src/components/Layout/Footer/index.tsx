@@ -1,7 +1,20 @@
 import styled from 'styled-components';
-import Copyright from '../Copyright';
+import Copyright from './Copyright';
 
-const Container = styled.footer``;
+const Container = styled.footer`
+  transform: rotate(270deg);
+  position: fixed;
+  display: block;
+  top: 25rem;
+  right: -5rem;
+  z-index: 50;
+  @media screen and (max-width: 1024px) {
+    right: -8rem;
+  }
+  @media screen and (max-width: 425px) {
+    display: none;
+  }
+`;
 
 const Footer = (): React.ReactElement => {
   return (

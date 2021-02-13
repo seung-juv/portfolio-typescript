@@ -1,5 +1,4 @@
 import React, { useMemo } from 'react';
-import Link from 'next/link';
 import styled from 'styled-components';
 import { Prismabook, Favicon, Github, GooglePlus, Instagram } from '#components/Icons';
 import GlobalNavigationBar from './GlobalNavigationBar';

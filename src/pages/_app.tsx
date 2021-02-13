@@ -1,14 +1,12 @@
 import { AppProps } from 'next/app';
 import { wrapper } from '#store/store';
-import Head from 'next/head';
 import Layout from '#components/Layout';
-import GloablStyles from '#assets/styles/GloablStyles';
-import Providers from '#components/Layout/Providers';
 import '#assets/scss/main.scss';
+import Head from 'next/head';
 
 const App: React.FC<AppProps> = ({ Component, pageProps }: AppProps) => {
   return (
-    <Providers>
+    <Layout>
       <Head>
         <meta charSet='utf-8' />
         <title>Seung Ju | Portfolio</title>
@@ -22,11 +20,8 @@ const App: React.FC<AppProps> = ({ Component, pageProps }: AppProps) => {
         <meta name='theme-color' content='#000000' />
         <link ref='canonical' href='https://seung-ju.com' />
       </Head>
-      <Layout>
-        <GloablStyles />
-        <Component {...pageProps} />
-      </Layout>
-    </Providers>
+      <Component {...pageProps} />
+    </Layout>
   );
 };
 
