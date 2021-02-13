@@ -1,10 +1,11 @@
 FROM node:14-alpine
-RUN mkdir -p /usr/src/app
+WORKDIR /usr/app
 ENV PORT 3000
-WORKDIR /usr/src/app
-COPY package*.json ./
+WORKDIR /usr/app
+COPY ./package*.json ./
 RUN npm install --production
-COPY . /usr/src/app
+COPY ./ ./
 RUN npm run build
 EXPOSE 3000
+USER node
 CMD [ "npm", "start" ]
