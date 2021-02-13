@@ -11,9 +11,6 @@ const Container = styled.div`
   position: fixed;
   top: 0;
   left: 0;
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: space-between;
   padding: 12.5rem 24rem;
   z-index: 30;
   @media screen and (max-width: 768px) {
@@ -23,20 +20,11 @@ const Container = styled.div`
 `;
 
 const Shadow = styled.div`
-  width: 60rem;
-  height: 60rem;
   opacity: 0.05;
   position: absolute;
-  bottom: 20%;
-  right: 5%;
-  @media screen and (max-width: 768px) {
-    width: 40rem;
-    height: 40rem;
-  }
+  bottom: -5%;
+  right: 0;
   @media screen and (max-width: 425px) {
-    right: 0;
-    left: 0;
-    margin: 0 auto;
     width: 95vw;
     height: 95vw;
   }
@@ -47,7 +35,7 @@ const Menu = (): React.ReactElement => {
     <Container>
       <GlobalNavigationBar />
       <Shadow>
-        <Favicon size={60} />
+        <Favicon size={80} />
       </Shadow>
     </Container>
   );

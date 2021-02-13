@@ -1,7 +1,8 @@
+import { Moon } from '#components/Icons';
 import React from 'react';
 import styled from 'styled-components';
 import useDarkMode from 'use-dark-mode';
-import { Favicon, Moon } from '../../Icons';
+import Logo from './Logo';
 
 const Container = styled.header`
   width: 6rem;
@@ -20,14 +21,6 @@ const Container = styled.header`
   @media screen and (max-width: 768px) {
     left: 1rem;
   }
-`;
-
-const LogoContainer = styled.h1`
-  width: 4.8rem;
-  height: 4.8rem;
-  padding: 1.1rem;
-  box-sizing: border-box;
-  margin-bottom: 3rem;
 `;
 
 const ScrollLineContainer = styled.div`
@@ -70,11 +63,7 @@ const Header = (): React.ReactElement => {
   });
   return (
     <Container>
-      <LogoContainer>
-        <a href='/'>
-          <Favicon />
-        </a>
-      </LogoContainer>
+      <Logo />
       <ScrollLineContainer>
         <ScrollLine />
       </ScrollLineContainer>

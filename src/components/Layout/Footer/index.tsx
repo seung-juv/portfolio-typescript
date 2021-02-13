@@ -6,10 +6,10 @@ const Container = styled.footer`
   position: fixed;
   display: block;
   top: 25rem;
-  right: -6.5rem;
+  right: -6rem;
   z-index: 50;
   @media screen and (max-width: 1024px) {
-    right: -9.5rem;
+    right: -9rem;
   }
   @media screen and (max-width: 425px) {
     display: none;
