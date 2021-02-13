@@ -1,6 +1,5 @@
 import React from 'react';
 import styled, { ThemeType } from 'styled-components';
-import ProfileImg from '#assets/images/profile_img.jpg';
 
 const Container = styled.div`
   width: 60%;
@@ -82,7 +81,7 @@ const About = () => {
       <Title>About</Title>
       <ProfileContainer>
         <ProfilePicture>
-          <Picture src={ProfileImg} alt='Picture' />
+          <Picture src={'/src/assets/images/profile_img.jpg'} alt='Picture' />
         </ProfilePicture>
         <ContentContainer>
           <ContentTitle>

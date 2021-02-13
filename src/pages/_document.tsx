@@ -5,8 +5,8 @@ class RootDocument extends Document {
     return (
       <Html lang={'ko'} id={'seung-ju'}>
         <Head>
-          <link rel='icon' href='/static/favicon.ico' />
-          <link rel='apple-touch-icon' href='../src/assets/images/logo192.png' />
+          <link rel='icon' href='/favicon.ico' />
+          <link rel='apple-touch-icon' href='/logo192.png' />
         </Head>
         <body>
           <Main />
