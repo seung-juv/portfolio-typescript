@@ -39,9 +39,11 @@ const Socials = ({ containerStyle }: SocialsProps): React.ReactElement => {
   );
   return (
     <Container style={containerStyle}>
-      {items?.map((item, index) => (
-        <Social key={index} {...item} />
-      ))}
+      {items?.map(
+        (item: SocialProps, index: number): React.ReactElement => (
+          <Social key={index} {...item} />
+        )
+      )}
     </Container>
   );
 };

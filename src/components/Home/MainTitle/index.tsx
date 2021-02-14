@@ -14,12 +14,14 @@ const Container = styled.div`
 const Title = styled.span`
   font-size: 1.6rem;
   color: ${({ theme }) => theme.blackColor};
+  line-height: initial;
   overflow: hidden;
-  margin: 1rem 0;
+  margin: 1rem 0 0.8rem;
 `;
 
 const Content = styled.span`
   font-size: 1.2rem;
+  line-height: initial;
   font-weight: 300;
   overflow: hidden;
   color: ${({ theme }) => theme.lightGreyColor};
@@ -30,7 +32,7 @@ const MainTitle = (): React.ReactElement => {
     <Container>
       <LogoAnimation />
       <Title>Design + Front-end + Back-end</Title>
-      <Content>‘Seung Ju’ is creative designer and developer.</Content>
+      <Content>‘Seung Ju’ is creative design and develop.</Content>
     </Container>
   );
 };

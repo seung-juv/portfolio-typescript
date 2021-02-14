@@ -29,6 +29,7 @@
       "#pages/*": ["./pages/*"],
       "#hooks/*": ["./hooks/*"],
       "#store/*": ["./store/*"],
+      "#data/*": ["./data/*"],
       "#/*": ["*"]
     },
     "rootDir": "."

@@ -5,6 +5,7 @@ System.config({
     '#pages/*': './src/pages/*',
     '#hooks/*': './src/hooks/*',
     '#store/*': './src/store/*',
+    '#data/*': './src/data/*',
     '#/*': './*',
   },
 });

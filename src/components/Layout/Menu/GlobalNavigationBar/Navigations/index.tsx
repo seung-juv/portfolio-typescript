@@ -35,9 +35,11 @@ const Navigations = (): React.ReactElement => {
 
   return (
     <Container>
-      {items?.map((item, index) => (
-        <Navigation key={index} {...item} />
-      ))}
+      {items?.map(
+        (item: NavigationProps, index: number): React.ReactElement => (
+          <Navigation key={index} {...item} />
+        )
+      )}
     </Container>
   );
 };

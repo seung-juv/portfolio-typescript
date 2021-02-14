@@ -1,3 +1,4 @@
+import MainProject from '#components/Home/MainProject';
 import MainTitle from '#components/Home/MainTitle';
 import styled from 'styled-components';
 
@@ -13,6 +14,7 @@ const Home = (): React.ReactElement => {
   return (
     <Container>
       <MainTitle />
+      <MainProject />
     </Container>
   );
 };
