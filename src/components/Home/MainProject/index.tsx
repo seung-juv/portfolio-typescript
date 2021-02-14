@@ -15,10 +15,8 @@ const Container = styled.div`
   flex-flow: column nowrap;
   margin-bottom: 20rem;
   > div {
-    &:nth-child(2n) {
-      > * {
-        justify-content: flex-start;
-      }
+    &:nth-child(2n - 1) {
+      align-self: flex-end;
     }
     &:not(:last-child) {
       margin-bottom: 20rem;

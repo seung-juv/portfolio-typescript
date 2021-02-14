@@ -15,14 +15,9 @@ export interface ProjectMainProps {
   category: string;
 }
 
-const Wrapper = styled.div`
-  overflow: hidden;
-`;
-
 const Container = styled.div`
   position: relative;
   width: 76%;
-  margin-left: 0.5rem;
   > a {
     display: block;
     width: 100%;
@@ -52,17 +47,15 @@ const ProjectMain = ({
   category,
 }: ProjectMainProps) => {
   return (
-    <Wrapper className={className}>
-      <Container>
-        <Link href={`/works/${id}`}>
-          <a>
-            <Thumbnail background={background} thumb={thumb} />
-            <Meta category={category} />
-            <Title title={project} caption={caption} />
-          </a>
-        </Link>
-      </Container>
-    </Wrapper>
+    <Container className={className}>
+      <Link href={`/works/${id}`}>
+        <a>
+          <Thumbnail background={background} thumb={thumb} />
+          <Meta category={category} />
+          <Title title={project} caption={caption} />
+        </a>
+      </Link>
+    </Container>
   );
 };
 
