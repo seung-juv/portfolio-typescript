@@ -7,7 +7,7 @@ interface TitleProps {
 
 const Container = styled.div`
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   margin-top: 2rem;
 `;
 
