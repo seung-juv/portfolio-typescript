@@ -8,6 +8,7 @@ interface ThumbnailProps {
 
 const Wrapper = styled.div<{ src: string }>`
   width: 100%;
+  height: 60rem;
   background-image: url(${({ src }) => src});
   background-size: cover;
   background-position: center center;
@@ -17,12 +18,15 @@ const Wrapper = styled.div<{ src: string }>`
 `;
 
 const Container = styled.div`
-  width: 100%;
+  width: 70%;
   max-width: 105rem;
-  height: 60rem;
+  height: 40rem;
   border-radius: 10px;
   background: #ffffff20;
+  position: absolute;
+  right: 2rem;
   top: 0;
+  bottom: 0;
   margin: auto 0;
   @media screen and (max-width: 1440px) {
     width: 95%;
@@ -61,13 +65,13 @@ const Container = styled.div`
 `;
 
 const Video = styled.video`
-  width: 100%;
+  width: 95%;
   max-width: 100rem;
   border-radius: 10px;
   position: absolute;
-  top: 3rem;
-  right: 1rem;
+  top: 0;
   bottom: 0;
+  right: 1rem;
   margin: auto 0;
   object-fit: cover;
   @media screen and (max-width: 1440px) {
@@ -81,10 +85,10 @@ const Video = styled.video`
 
 const Thumbnail = ({ background, thumb }: ThumbnailProps): React.ReactElement => {
   return (
-    <Wrapper src={background}>
+    <Wrapper src={`/images/background/${background}.png`}>
       <Container>
-        <Video autoPlay loop muted poster={thumb}>
-          <source src={thumb} />
+        <Video autoPlay loop muted poster={`/images/thumb/${thumb}.mov`}>
+          <source src={`/images/thumb/${thumb}.mov`} />
         </Video>
       </Container>
     </Wrapper>
