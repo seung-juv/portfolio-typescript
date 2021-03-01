@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import LogoAnimation from './LogoAnimation';
+import LogoAnimation from '../atoms/LogoAnimation';
 
 const Container = styled.div`
   padding-top: 35vh;

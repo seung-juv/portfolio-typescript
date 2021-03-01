@@ -20,7 +20,7 @@ const DarkButton = (): React.ReactElement => {
     storageKey: 'dark-mode',
   });
   return (
-    <Container onClick={toggle}>
+    <Container onClick={toggle} aria-hidden='true'>
       <Moon size={1.8} />
     </Container>
   );

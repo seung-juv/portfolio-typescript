@@ -17,12 +17,13 @@ export interface ProjectMainItemProps {
 
 const Container = styled.div`
   position: relative;
-  width: 76%;
+  width: 75%;
   > a {
     display: block;
     width: 100%;
     height: 100%;
     padding-left: 2.5rem;
+    ${({ theme }) => theme.transition};
   }
   &:hover {
     > a {

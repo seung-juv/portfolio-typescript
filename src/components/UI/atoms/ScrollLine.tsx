@@ -1,12 +1,15 @@
 import styled from 'styled-components';
 
+interface ScrollLineProps {
+  className?: string;
+}
+
 const Container = styled.div`
   width: 1px;
   flex: 1;
   overflow: hidden;
   position: relative;
   background-color: ${({ theme }) => theme.backgroundColor}15;
-  margin-bottom: 3rem;
   @media screen and (max-width: 768px) {
     display: none;
   }
@@ -20,9 +23,9 @@ const Line = styled.span`
   background-color: ${({ theme }) => theme.blackColor};
 `;
 
-const ScrollLine = () => {
+const ScrollLine = ({ className }: ScrollLineProps): React.ReactElement => {
   return (
-    <Container>
+    <Container className={className} aria-hidden='true'>
       <Line />
     </Container>
   );

@@ -1,6 +1,6 @@
 const LogoAnimation = (): React.ReactElement => {
   return (
-    <svg version='1.1' viewBox='0 0 504.3 134.2' width='200px'>
+    <svg version='1.1' viewBox='0 0 504.3 134.2' width='200px' aria-label='Seung Ju'>
       <mask id='mask'>
         <path
           style={{

@@ -39,7 +39,7 @@ const Line = styled.span`
 
 const MenuButton = ({ onClick }: MenuButtonProps): React.ReactElement => {
   return (
-    <Container onClick={onClick}>
+    <Container aria-label='Main navigation menu' onClick={onClick}>
       <Line>1</Line>
       <Line>2</Line>
       <Line>3</Line>

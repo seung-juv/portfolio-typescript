@@ -1,4 +1,4 @@
-import MainTitle from '#components/UI/atoms/MainTitle';
+import MainTitle from '#components/UI/organisms/MainTitle';
 import MainProjects from '#components/UI/organisms/MainProjects';
 import styled from 'styled-components';
 

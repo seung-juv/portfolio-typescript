@@ -2,15 +2,17 @@ import Link from 'next/link';
 import styled from 'styled-components';
 import { Favicon } from './Icons';
 
-const Container = styled.h1`
-  margin-bottom: 3rem;
-`;
+interface LogoProps {
+  className?: string;
+}
 
-const Logo = (): React.ReactElement => {
+const Container = styled.h1``;
+
+const Logo = ({ className }: LogoProps): React.ReactElement => {
   return (
-    <Container>
+    <Container className={className}>
       <Link href='/'>
-        <a>
+        <a aria-label='Seung Ju portfolio'>
           <Favicon size={4.8} />
         </a>
       </Link>

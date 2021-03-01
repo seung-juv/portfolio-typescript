@@ -20,6 +20,9 @@ const Container = styled.header`
   @media screen and (max-width: 768px) {
     left: 1rem;
   }
+  > *:not(:last-child) {
+    margin-bottom: 3rem;
+  }
 `;
 
 const Header = (): React.ReactElement => (
