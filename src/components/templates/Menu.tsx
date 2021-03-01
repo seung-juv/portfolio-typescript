@@ -1,6 +1,7 @@
+import React from 'react';
 import styled from 'styled-components';
-import { Favicon } from '#components/UI/atoms/Icons';
 import GlobalNavigationBar from '#components/UI/organisms/GlobalNavigationBar';
+import { Favicon } from '#components/UI/atoms/Icons';
 
 const Container = styled.div`
   width: 100vw;
@@ -30,6 +31,12 @@ const Shadow = styled.div`
 `;
 
 const Menu = (): React.ReactElement => {
+  React.useEffect(() => {
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.body.style.overflow = 'visible';
+    };
+  }, []);
   return (
     <Container>
       <GlobalNavigationBar />

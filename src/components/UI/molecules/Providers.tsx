@@ -1,6 +1,6 @@
 import GloablStyles from '#assets/styles/GloablStyles';
 import themes from '#assets/styles/themes';
-import { useEffect, useState } from 'react';
+import React from 'react';
 import { ThemeProvider, ThemeType } from 'styled-components';
 import useDarkMode from 'use-dark-mode';
 
@@ -9,13 +9,13 @@ interface ProvidersType {
 }
 
 const Providers = ({ children }: ProvidersType): React.ReactElement => {
-  const [mounted, setMounted] = useState(false);
+  const [mounted, setMounted] = React.useState(false);
   const { value: isDark } = useDarkMode(undefined, {
     storageKey: 'dark-mode',
   });
   const theme: ThemeType = isDark ? themes.dark : themes.light;
 
-  useEffect(() => {
+  React.useEffect(() => {
     setMounted(true);
   }, []);
 

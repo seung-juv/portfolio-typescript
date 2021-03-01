@@ -25,6 +25,7 @@ const Container = styled.div`
       height: 1px;
       background-color: ${({ theme }) => theme.blackColor};
       margin-left: 2rem;
+      ${({ theme }) => theme.transition};
     }
   }
 `;
