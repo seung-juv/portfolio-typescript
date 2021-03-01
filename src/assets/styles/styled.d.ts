@@ -8,8 +8,7 @@ declare module 'styled-components' {
     greyColor: string;
     darkGreyColor: string;
     lightGreyColor: string;
-    blueColor: string;
-    blueHoverColor: string;
+    transition: string;
   }
 
   export interface DefaultTheme extends ThemeType {}

@@ -1,6 +1,8 @@
 import { ThemeType } from 'styled-components';
 
-const defaultStyle = {};
+const defaultStyle = {
+  transition: 'transition: 0.3s cubic-bezier(0.25, 0.47, 0.12, 0.99)',
+};
 
 export default <{ dark: ThemeType; light: ThemeType }>{
   dark: {
@@ -10,8 +12,6 @@ export default <{ dark: ThemeType; light: ThemeType }>{
     greyColor: '#D8D8D8',
     darkGreyColor: '#666666',
     lightGreyColor: '#999999',
-    blueColor: '#3068f4',
-    blueHoverColor: '#1957e3',
     ...defaultStyle,
   },
   light: {
@@ -21,8 +21,6 @@ export default <{ dark: ThemeType; light: ThemeType }>{
     greyColor: '#D8D8D8',
     darkGreyColor: '#666666',
     lightGreyColor: '#999999',
-    blueColor: '#3068f4',
-    blueHoverColor: '#1957e3',
     ...defaultStyle,
   },
 };
