@@ -1,7 +1,7 @@
-import { Facebook, Github, GooglePlus, Instagram } from '#components/Icons';
+import { Facebook, Github, GooglePlus, Instagram } from '#components/UI/atoms/Icons';
 import { useMemo } from 'react';
 import styled from 'styled-components';
-import Social, { SocialProps } from './Social';
+import Social, { SocialProps } from '../atoms/Social';
 
 type SocialItemsType = Array<SocialProps>;
 

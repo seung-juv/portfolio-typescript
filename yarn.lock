@@ -1158,7 +1158,7 @@
   dependencies:
     regenerator-runtime "^0.13.4"
 
-"@babel/runtime@^7.10.2", "@babel/runtime@^7.11.2", "@babel/runtime@^7.12.1", "@babel/runtime@^7.5.5", "@babel/runtime@^7.7.2", "@babel/runtime@^7.8.4", "@babel/runtime@^7.8.7":
+"@babel/runtime@^7.10.2", "@babel/runtime@^7.11.2", "@babel/runtime@^7.5.5", "@babel/runtime@^7.7.2", "@babel/runtime@^7.8.4", "@babel/runtime@^7.8.7":
   version "7.12.13"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.12.13.tgz"
   integrity sha512-8+3UMPBrjFa/6TtKi/7sehPKqfAm4g6K+YQjyyFOLUTxzOngcRZTlAVY8sc2CORJYqdHQY8gRPHmn+qo15rCBw==
@@ -1623,16 +1623,6 @@
   resolved "https://registry.yarnpkg.com/@polka/url/-/url-1.0.0-next.11.tgz"
   integrity sha512-3NsZsJIA/22P3QUyrEDNA2D133H4j224twJrdipXN38dpnIOzAbUDtOwkcJ5pXmn75w7LSQDjA4tO9dm1XlqlA==
 
-"@reduxjs/toolkit@^1.5.0":
-  version "1.5.0"
-  resolved "https://registry.yarnpkg.com/@reduxjs/toolkit/-/toolkit-1.5.0.tgz#1025c1ccb224d1fc06d8d98a61f6717d57e6d477"
-  integrity sha512-E/FUraRx+8guw9Hlg/Ja8jI/hwCrmIKed8Annt9YsZw3BQp+F24t5I5b2OWR6pkEHY4hn1BgP08FrTZFRKsdaQ==
-  dependencies:
-    immer "^8.0.0"
-    redux "^4.0.0"
-    redux-thunk "^2.3.0"
-    reselect "^4.0.0"
-
 "@rollup/plugin-node-resolve@^7.1.1":
   version "7.1.3"
   resolved "https://registry.yarnpkg.com/@rollup/plugin-node-resolve/-/plugin-node-resolve-7.1.3.tgz"
@@ -1862,7 +1852,7 @@
   resolved "https://registry.yarnpkg.com/@types/gsap/-/gsap-1.20.2.tgz#038d0e81a8dd50b9b6894f34f3cd4045f71c62b8"
   integrity sha512-i9nUsnS32+VTgoX5IlaCYukJpCoB3c6h3bZvO67aIRdb3z8NFTWgeUDpQutLyb1ujowp6nw37qLQNvEowqq8yw==
 
-"@types/hoist-non-react-statics@*", "@types/hoist-non-react-statics@^3.3.0":
+"@types/hoist-non-react-statics@*":
   version "3.3.1"
   resolved "https://registry.yarnpkg.com/@types/hoist-non-react-statics/-/hoist-non-react-statics-3.3.1.tgz"
   integrity sha512-iMIqiko6ooLrTh1joXodJK5X9xeEALT1kM5G3ZLhD3hszxBdIEd5C75U834D9mLcINgD4OyZf5uQXjkuYydWvA==
@@ -1938,16 +1928,6 @@
   version "1.5.4"
   resolved "https://registry.yarnpkg.com/@types/q/-/q-1.5.4.tgz"
   integrity sha512-1HcDas8SEj4z1Wc696tH56G8OlRaH/sqZOynNNB+HF0WOeXPaxTtbYzJY2oEfiUxjSKjhCKr+MvR7dCHcEelug==
-
-"@types/react-redux@^7.1.16":
-  version "7.1.16"
-  resolved "https://registry.npmjs.org/@types/react-redux/-/react-redux-7.1.16.tgz"
-  integrity sha512-f/FKzIrZwZk7YEO9E1yoxIuDNRiDducxkFlkw/GNMGEnK9n4K8wJzlJBghpSuOVDgEUHoDkDF7Gi9lHNQR4siw==
-  dependencies:
-    "@types/hoist-non-react-statics" "^3.3.0"
-    "@types/react" "*"
-    hoist-non-react-statics "^3.3.0"
-    redux "^4.0.0"
 
 "@types/react@*", "@types/react@^17.0.1":
   version "17.0.1"
@@ -5966,7 +5946,7 @@ hmac-drbg@^1.0.1:
     minimalistic-assert "^1.0.0"
     minimalistic-crypto-utils "^1.0.1"
 
-hoist-non-react-statics@^3.0.0, hoist-non-react-statics@^3.3.0, hoist-non-react-statics@^3.3.2:
+hoist-non-react-statics@^3.0.0, hoist-non-react-statics@^3.3.0:
   version "3.3.2"
   resolved "https://registry.yarnpkg.com/hoist-non-react-statics/-/hoist-non-react-statics-3.3.2.tgz"
   integrity sha512-/gGivxi8JPKWNm/W0jSmzcMPpfpPLc3dY/6GxhX2hQ9iGj3aDfklV4ET7NjKpSinLpJ5vafa9iiGIEZg10SfBw==
@@ -6208,11 +6188,6 @@ immer@7.0.9:
   version "7.0.9"
   resolved "https://registry.yarnpkg.com/immer/-/immer-7.0.9.tgz"
   integrity sha512-Vs/gxoM4DqNAYR7pugIxi0Xc8XAun/uy7AQu4fLLqaTBHxjOP9pJ266Q9MWA/ly4z6rAFZbvViOtihxUZ7O28A==
-
-immer@^8.0.0:
-  version "8.0.1"
-  resolved "https://registry.yarnpkg.com/immer/-/immer-8.0.1.tgz"
-  integrity sha512-aqXhGP7//Gui2+UrEtvxZxSquQVXTpZ7KDxfCcKAF3Vysvw0CViVaW9RZ1j1xlIYqaaaipBoqdqeibkc18PNvA==
 
 import-cwd@^2.0.0:
   version "2.1.0"
@@ -7972,11 +7947,6 @@ next-env@^1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/next-env/-/next-env-1.1.1.tgz"
   integrity sha512-uZo/u0GhmkUaSg4Dcx39QsEGRFw2eianNsdzdm/9Bd4bTAfzDH/D6y0WyB34sESZ5hXPctHg3t3Q3U99QAMc1w==
-
-next-redux-wrapper@^6.0.2:
-  version "6.0.2"
-  resolved "https://registry.yarnpkg.com/next-redux-wrapper/-/next-redux-wrapper-6.0.2.tgz#b8dcd214e7b5cedd7a2a611ddb60422384d24374"
-  integrity sha512-I9CnIYhQwI/qEoNdc9VAPjIyuq4rFFhCTa4rKhoDHWEVHGB1DXZy8TAyGpwvWizESd8IoTI/OKlP6bFpCbXsOw==
 
 next-tick@~1.0.0:
   version "1.0.0"
@@ -9807,17 +9777,6 @@ react-is@^17.0.1:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-17.0.1.tgz"
   integrity sha512-NAnt2iGDXohE5LI7uBnLnqvLQMtzhkiAOLXTmv+qnF9Ky7xAPcX8Up/xWIhxvLVGJvuLiNc4xQLtuqDRzb4fSA==
 
-react-redux@^7.2.2:
-  version "7.2.2"
-  resolved "https://registry.yarnpkg.com/react-redux/-/react-redux-7.2.2.tgz"
-  integrity sha512-8+CQ1EvIVFkYL/vu6Olo7JFLWop1qRUeb46sGtIMDCSpgwPQq8fPLpirIB0iTqFe9XYEFPHssdX8/UwN6pAkEA==
-  dependencies:
-    "@babel/runtime" "^7.12.1"
-    hoist-non-react-statics "^3.3.2"
-    loose-envify "^1.4.0"
-    prop-types "^15.7.2"
-    react-is "^16.13.1"
-
 react-refresh@0.8.3, react-refresh@^0.8.3:
   version "0.8.3"
   resolved "https://registry.yarnpkg.com/react-refresh/-/react-refresh-0.8.3.tgz"
@@ -9995,24 +9954,6 @@ recursive-readdir@2.2.2:
   dependencies:
     minimatch "3.0.4"
 
-redux-devtools-extension@^2.13.8:
-  version "2.13.8"
-  resolved "https://registry.yarnpkg.com/redux-devtools-extension/-/redux-devtools-extension-2.13.8.tgz"
-  integrity sha512-8qlpooP2QqPtZHQZRhx3x3OP5skEV1py/zUdMY28WNAocbafxdG2tRD1MWE7sp8obGMNYuLWanhhQ7EQvT1FBg==
-
-redux-thunk@^2.3.0:
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/redux-thunk/-/redux-thunk-2.3.0.tgz"
-  integrity sha512-km6dclyFnmcvxhAcrQV2AkZmPQjzPDjgVlQtR0EQjxZPyJ0BnMf3in1ryuR8A2qU0HldVRfxYXbFSKlI3N7Slw==
-
-redux@^4.0.0, redux@^4.0.5:
-  version "4.0.5"
-  resolved "https://registry.yarnpkg.com/redux/-/redux-4.0.5.tgz"
-  integrity sha512-VSz1uMAH24DM6MF72vcojpYPtrTUu3ByVWfPL1nPfVRb5mZVTve5GnNCUV53QM/BZ66xfWrm0CTWoM+Xlz8V1w==
-  dependencies:
-    loose-envify "^1.4.0"
-    symbol-observable "^1.2.0"
-
 reflect-metadata@^0.1.12:
   version "0.1.13"
   resolved "https://registry.yarnpkg.com/reflect-metadata/-/reflect-metadata-0.1.13.tgz"
@@ -10189,11 +10130,6 @@ requires-port@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/requires-port/-/requires-port-1.0.0.tgz"
   integrity sha1-kl0mAdOaxIXgkc8NpcbmlNw9yv8=
-
-reselect@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/reselect/-/reselect-4.0.0.tgz"
-  integrity sha512-qUgANli03jjAyGlnbYVAV5vvnOmJnODyABz51RdBN7M4WaVu8mecZWgyQNkG8Yqe3KRGRt0l4K4B3XVEULC4CA==
 
 resolve-cwd@^2.0.0:
   version "2.0.0"
@@ -11330,11 +11266,6 @@ svgo@^1.0.0, svgo@^1.2.2:
     stable "^0.1.8"
     unquote "~1.1.1"
     util.promisify "~1.0.0"
-
-symbol-observable@^1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/symbol-observable/-/symbol-observable-1.2.0.tgz"
-  integrity sha512-e900nM8RRtGhlV36KGEU9k65K3mPb1WV70OdjfxlG2EAuM1noi/E/BaW/uMhL7bPEssK8QV57vN3esixjUvcXQ==
 
 symbol-tree@^3.2.4:
   version "3.2.4"

@@ -1,5 +1,7 @@
 import { ThemeType } from 'styled-components';
 
+const defaultStyle = {};
+
 export default <{ dark: ThemeType; light: ThemeType }>{
   dark: {
     backgroundColor: '#121217',
@@ -10,6 +12,7 @@ export default <{ dark: ThemeType; light: ThemeType }>{
     lightGreyColor: '#999999',
     blueColor: '#3068f4',
     blueHoverColor: '#1957e3',
+    ...defaultStyle,
   },
   light: {
     backgroundColor: '#FFFFFF',
@@ -20,5 +23,6 @@ export default <{ dark: ThemeType; light: ThemeType }>{
     lightGreyColor: '#999999',
     blueColor: '#3068f4',
     blueHoverColor: '#1957e3',
+    ...defaultStyle,
   },
 };

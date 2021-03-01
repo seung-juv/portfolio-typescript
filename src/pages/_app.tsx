@@ -1,8 +1,7 @@
 import { AppProps } from 'next/app';
-import { wrapper } from '#store/store';
-import Layout from '#components/Layout';
-import '#assets/scss/main.scss';
 import Head from 'next/head';
+import '#assets/scss/main.scss';
+import Layout from '#components/templates/Layout';
 
 const App: React.FC<AppProps> = ({ Component, pageProps }: AppProps) => {
   return (
@@ -25,4 +24,4 @@ const App: React.FC<AppProps> = ({ Component, pageProps }: AppProps) => {
   );
 };
 
-export default wrapper.withRedux(App);
+export default App;

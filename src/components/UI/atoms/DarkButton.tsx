@@ -1,4 +1,4 @@
-import { Moon } from '#components/Icons';
+import { Moon } from './Icons';
 import styled from 'styled-components';
 import useDarkMode from 'use-dark-mode';
 

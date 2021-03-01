@@ -1,7 +1,7 @@
 import { workDatas } from '#data/workDatas';
-import ProjectMain, { ProjectMainProps } from '#components/Project/ProjectMain';
 import styled from 'styled-components';
-import SubTitle from '../SubTitle';
+import SubTitle from '../atoms/SubTitle';
+import ProjectMainItem, { ProjectMainItemProps } from '../molecules/ProjectMainItem';
 
 const Wrapper = styled.div``;
 
@@ -24,14 +24,14 @@ const Container = styled.div`
   }
 `;
 
-const MainProject = (): React.ReactElement => {
+const MainProjects = (): React.ReactElement => {
   return (
     <Wrapper>
       <MainProjectSubTitle label='Works' href='/works' />
       <Container>
         {workDatas?.map(
-          (item: ProjectMainProps, index: number): React.ReactElement => (
-            <ProjectMain key={index} {...item} />
+          (item: ProjectMainItemProps, index: number): React.ReactElement => (
+            <ProjectMainItem key={index} {...item} />
           )
         )}
       </Container>
@@ -39,4 +39,4 @@ const MainProject = (): React.ReactElement => {
   );
 };
 
-export default MainProject;
+export default MainProjects;

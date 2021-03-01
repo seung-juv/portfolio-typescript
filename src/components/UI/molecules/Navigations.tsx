@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 import styled from 'styled-components';
-import Navigation, { NavigationProps } from './Navigation';
+import Navigation, { NavigationProps } from '../atoms/Navigation';
 
 type NavigationItemsType = Array<NavigationProps>;
 

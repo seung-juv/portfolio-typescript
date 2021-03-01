@@ -1,11 +1,11 @@
 import Link from 'next/link';
 import React from 'react';
 import styled from 'styled-components';
-import Meta from './Meta';
-import Thumbnail from './Thumbnail';
-import Title from './Title';
+import Meta from '../atoms/Meta';
+import Title from '../atoms/Title';
+import Thumbnail from '../atoms/Thumbnail';
 
-export interface ProjectMainProps {
+export interface ProjectMainItemProps {
   id: number;
   className?: string;
   background: string;
@@ -37,7 +37,7 @@ const Container = styled.div`
   }
 `;
 
-const ProjectMain = ({
+const ProjectMainItem = ({
   id,
   className,
   background,
@@ -45,7 +45,7 @@ const ProjectMain = ({
   project,
   caption,
   category,
-}: ProjectMainProps) => {
+}: ProjectMainItemProps) => {
   return (
     <Container className={className}>
       <Link href={`/works/${id}`}>
@@ -59,4 +59,4 @@ const ProjectMain = ({
   );
 };
 
-export default ProjectMain;
+export default ProjectMainItem;

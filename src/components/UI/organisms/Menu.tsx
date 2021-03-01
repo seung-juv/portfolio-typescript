@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { Favicon } from '#components/Icons';
-import GlobalNavigationBar from './GlobalNavigationBar';
+import { Favicon } from '#components/UI/atoms/Icons';
+import GlobalNavigationBar from '#components/UI/organisms/GlobalNavigationBar';
 
 const Container = styled.div`
   width: 100vw;

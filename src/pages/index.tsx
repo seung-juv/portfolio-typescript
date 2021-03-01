@@ -1,5 +1,5 @@
-import MainProject from '#components/Home/MainProject';
-import MainTitle from '#components/Home/MainTitle';
+import MainTitle from '#components/UI/atoms/MainTitle';
+import MainProjects from '#components/UI/organisms/MainProjects';
 import styled from 'styled-components';
 
 const Container = styled.div`
@@ -14,7 +14,7 @@ const Home = (): React.ReactElement => {
   return (
     <Container>
       <MainTitle />
-      <MainProject />
+      <MainProjects />
     </Container>
   );
 };

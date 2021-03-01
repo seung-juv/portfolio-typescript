@@ -1,6 +1,6 @@
-import { Favicon } from '#components/Icons';
 import Link from 'next/link';
 import styled from 'styled-components';
+import { Favicon } from './Icons';
 
 const Container = styled.h1`
   margin-bottom: 3rem;

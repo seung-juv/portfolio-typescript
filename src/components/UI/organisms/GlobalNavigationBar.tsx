@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import Socials from './Socials';
-import Navigations from './Navigations';
+import Socials from '../molecules/Socials';
+import Navigations from '../molecules/Navigations';
 
 interface GlobalNavigationBarProps {
   containerStyle?: React.CSSProperties;

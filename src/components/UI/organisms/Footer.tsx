@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Copyright from './Copyright';
+import Copyright from '../atoms/Copyright';
 
 const Container = styled.footer`
   transform: rotate(270deg);

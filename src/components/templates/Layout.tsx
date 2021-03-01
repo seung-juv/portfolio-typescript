@@ -1,10 +1,10 @@
+import MenuButton from '#components/UI/atoms/MenuButton';
+import Providers from '#components/UI/molecules/Providers';
+import Footer from '#components/UI/organisms/Footer';
+import Header from '#components/UI/organisms/Header';
+import Menu from '#components/UI/organisms/Menu';
 import { useCallback, useState } from 'react';
 import styled from 'styled-components';
-import Footer from './Footer';
-import Header from './Header';
-import Menu from './Menu';
-import MenuButton from './Menu/MenuButton';
-import Providers from './Providers';
 
 interface LayoutType {
   children: React.ReactNode;
