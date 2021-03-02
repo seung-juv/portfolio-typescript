@@ -1,4 +1,7 @@
 @charset "utf-8";
-@import "./common/*";
-@import "./lib/*";
-@import "./import/*";
+@import './common/base';
+@import './common/fonts';
+@import './common/mixins';
+@import './common/placeholders';
+@import './common/variables';
+@import './import/layout';
