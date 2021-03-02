@@ -8,7 +8,7 @@ interface ThumbnailProps {
 
 const Wrapper = styled.div<{ src: string }>`
   width: 100%;
-  height: 60rem;
+  height: 80rem;
   background-image: url(${({ src }) => src});
   background-size: cover;
   background-position: center center;
