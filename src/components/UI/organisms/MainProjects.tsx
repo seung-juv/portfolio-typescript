@@ -1,5 +1,6 @@
-import { workDatas } from '#data/workDatas';
+import React from 'react';
 import styled from 'styled-components';
+import { workDatas } from '#data/workDatas.ts';
 import SubTitle from '../atoms/SubTitle';
 import ProjectMainItem, { ProjectMainItemProps } from '../molecules/ProjectMainItem';
 
@@ -30,8 +31,8 @@ const MainProjects = (): React.ReactElement => {
       <MainProjectSubTitle label='Works' href='/works' />
       <Container>
         {workDatas?.map(
-          (item: ProjectMainItemProps, index: number): React.ReactElement => (
-            <ProjectMainItem key={index} {...item} />
+          (item: ProjectMainItemProps): React.ReactElement => (
+            <ProjectMainItem key={item.id} {...item} />
           )
         )}
       </Container>

@@ -1,5 +1,5 @@
-import Link from 'next/link';
 import React from 'react';
+import Link from 'next/link';
 import styled from 'styled-components';
 import Meta from '../atoms/Meta';
 import Title from '../atoms/Title';
@@ -46,11 +46,11 @@ const ProjectMainItem = ({
   project,
   caption,
   category,
-}: ProjectMainItemProps) => {
+}: ProjectMainItemProps): React.ReactElement => {
   return (
     <Container className={className}>
       <Link href={`/works/${id}`}>
-        <a>
+        <a href={`/works/${id}`}>
           <Thumbnail background={background} thumb={thumb} />
           <Meta category={category} />
           <Title title={project} caption={caption} />

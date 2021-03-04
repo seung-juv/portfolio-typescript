@@ -1,3 +1,4 @@
+import React from 'react';
 import styled from 'styled-components';
 import DarkButton from '../atoms/DarkButton';
 import Logo from '../atoms/Logo';

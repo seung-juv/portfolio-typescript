@@ -1,6 +1,7 @@
-import MainTitle from '#components/UI/organisms/MainTitle';
-import MainProjects from '#components/UI/organisms/MainProjects';
+import React from 'react';
 import styled from 'styled-components';
+import MainTitle from '#components/UI/organisms/MainTitle.tsx';
+import MainProjects from '#components/UI/organisms/MainProjects.tsx';
 
 const Container = styled.div`
   width: 80%;

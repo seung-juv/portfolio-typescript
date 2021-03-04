@@ -39,6 +39,7 @@ const ScrollLine = ({ className }: ScrollLineProps): React.ReactElement => {
     getScrollValue();
     const unsubscribe = window.addEventListener('scroll', getScrollValue);
     return unsubscribe;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -46,6 +47,10 @@ const ScrollLine = ({ className }: ScrollLineProps): React.ReactElement => {
       <Line scrollValue={scrollValue} />
     </Container>
   );
+};
+
+ScrollLine.defaultProps = {
+  className: '',
 };
 
 export default ScrollLine;

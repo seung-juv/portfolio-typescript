@@ -11,5 +11,5 @@ declare module 'styled-components' {
     transition: string;
   }
 
-  export interface DefaultTheme extends ThemeType {}
+  export type DefaultTheme = ThemeType;
 }

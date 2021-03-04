@@ -1,7 +1,8 @@
+import React from 'react';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
 import '#assets/scss/main.scss';
-import Layout from '#components/templates/Layout';
+import Layout from '#components/templates/Layout.tsx';
 
 const App: React.FC<AppProps> = ({ Component, pageProps }: AppProps) => {
   return (
@@ -17,7 +18,7 @@ const App: React.FC<AppProps> = ({ Component, pageProps }: AppProps) => {
         <meta property='og:title' content='Seung Ju | Portfolio' />
         <meta property='og:description' content='Seung Ju | Portfolio' />
         <meta name='theme-color' content='#000000' />
-        <link ref='canonical' href='https://seung-ju.com' />
+        <link rel='canonical' href='https://seung-ju.com' />
       </Head>
       <Component {...pageProps} />
     </Layout>

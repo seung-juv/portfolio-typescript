@@ -1,3 +1,4 @@
+import React from 'react';
 import styled from 'styled-components';
 import Socials from '../molecules/Socials';
 import Navigations from '../molecules/Navigations';
@@ -22,6 +23,10 @@ const GlobalNavigationBar = ({ containerStyle }: GlobalNavigationBarProps): Reac
       <Socials />
     </Container>
   );
+};
+
+GlobalNavigationBar.defaultProps = {
+  containerStyle: {},
 };
 
 export default GlobalNavigationBar;

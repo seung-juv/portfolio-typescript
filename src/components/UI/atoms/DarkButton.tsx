@@ -1,6 +1,7 @@
-import { Moon } from './Icons';
+import React from 'react';
 import styled from 'styled-components';
 import useDarkMode from 'use-dark-mode';
+import { Moon } from './Icons';
 
 const Container = styled.button`
   width: 3.4rem;

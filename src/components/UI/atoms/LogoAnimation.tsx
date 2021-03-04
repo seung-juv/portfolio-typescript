@@ -1,14 +1,18 @@
+import React from 'react';
+import styled from 'styled-components';
+
+const MaskPath = styled.path`
+  fill: 'none';
+  stroke: '#FFFFFF';
+  stroke-width: 13;
+  stroke-dasharray: '2834.6455, 14173.2275';
+`;
+
 const LogoAnimation = (): React.ReactElement => {
   return (
     <svg version='1.1' viewBox='0 0 504.3 134.2' width='200px' aria-label='Seung Ju'>
       <mask id='mask'>
-        <path
-          style={{
-            fill: 'none',
-            stroke: '#FFFFFF',
-            strokeWidth: 13,
-            strokeDasharray: '2834.6455, 14173.2275',
-          }}
+        <MaskPath
           d='M64.8,24.7c0,0-2.4-16.7-23-19.3c-20.2-2.6-31.3,6-32.9,22.1c0.8,12.8,12,22.9,27.6,23.3
 c16.8,0.4,30.8,7.2,33.1,24.5c1,19.1-12.2,27-30.4,28.1C21,104.4,7.8,93.2,4.1,79s-12.8,2.5-12.8,2.5s-20.9,51.8,4.8,55.8
 c25.7,4,30.4-31,30.4-31l53.5-39.5H141c0,0,3.5-31.1-20.9-32.7c-24.4-1.6-25.7,20.1-25.1,39.3c1.6,18.2,8,26.2,23,27.6

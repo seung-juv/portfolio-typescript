@@ -1,6 +1,6 @@
-import { Facebook, Github, GooglePlus, Instagram } from '#components/UI/atoms/Icons';
-import { useMemo } from 'react';
+import React from 'react';
 import styled from 'styled-components';
+import { Facebook, Github, GooglePlus, Instagram } from '#components/UI/atoms/Icons.tsx';
 import Social, { SocialProps } from '../atoms/Social';
 
 type SocialItemsType = Array<SocialProps>;
@@ -16,21 +16,25 @@ const Container = styled.ul`
 `;
 
 const Socials = ({ containerStyle }: SocialsProps): React.ReactElement => {
-  const items: SocialItemsType = useMemo(
+  const items: SocialItemsType = React.useMemo(
     () => [
       {
+        id: 'github',
         href: 'https://github.com/kingsky32',
         icon: <Github />,
       },
       {
+        id: 'facebook',
         href: 'https://www.facebook.com/profile.php?id=100004252961772',
         icon: <Facebook />,
       },
       {
+        id: 'instagram',
         href: 'https://www.instagram.com/kingsky32',
         icon: <Instagram />,
       },
       {
+        id: 'googleplus',
         href: 'mailto:kingsky32@gmail.com',
         icon: <GooglePlus />,
       },
@@ -40,8 +44,8 @@ const Socials = ({ containerStyle }: SocialsProps): React.ReactElement => {
   return (
     <Container style={containerStyle}>
       {items?.map(
-        (item: SocialProps, index: number): React.ReactElement => (
-          <Social key={index} {...item} />
+        (item: SocialProps): React.ReactElement => (
+          <Social key={item.id} {...item} />
         )
       )}
     </Container>

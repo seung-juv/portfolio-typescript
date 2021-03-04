@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import GlobalNavigationBar from '#components/UI/organisms/GlobalNavigationBar';
-import { Favicon } from '#components/UI/atoms/Icons';
+import GlobalNavigationBar from '#components/UI/organisms/GlobalNavigationBar.tsx';
+import { Favicon } from '#components/UI/atoms/Icons.tsx';
 
 const Container = styled.div`
   width: 100vw;

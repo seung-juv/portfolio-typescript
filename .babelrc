@@ -34,8 +34,12 @@
             "rootPathPrefix": "#store/"
           },
           {
+            "rootPathSuffix": "./src/data",
+            "rootPathPrefix": "#data/"
+          },
+          {
             "rootPathSuffix": ".",
-            "rootPathPrefix": "#/"
+            "rootPathPrefix": "#"
           }
         ]
       }

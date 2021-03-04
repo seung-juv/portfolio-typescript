@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import Navigation, { NavigationProps } from '../atoms/Navigation';
 
@@ -11,7 +11,7 @@ export interface GlobalNavigationBarProps {
 const Container = styled.ul``;
 
 const Navigations = (): React.ReactElement => {
-  const items: NavigationItemsType = useMemo(
+  const items: NavigationItemsType = React.useMemo(
     () => [
       {
         href: '/',
@@ -36,8 +36,8 @@ const Navigations = (): React.ReactElement => {
   return (
     <Container>
       {items?.map(
-        (item: NavigationProps, index: number): React.ReactElement => (
-          <Navigation key={index} {...item} />
+        (item: NavigationProps): React.ReactElement => (
+          <Navigation key={item.label} {...item} />
         )
       )}
     </Container>

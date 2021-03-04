@@ -1,9 +1,10 @@
+import React from 'react';
 import Link from 'next/link';
 import styled from 'styled-components';
-import { Url } from 'url';
 
 export interface SocialProps {
-  href: string | Url;
+  id: string | number;
+  href: string;
   icon: React.ReactElement;
   containerStyle?: React.CSSProperties;
 }
@@ -18,7 +19,9 @@ const Social = ({ href, icon, containerStyle }: SocialProps): React.ReactElement
   return (
     <Container style={containerStyle}>
       <Link href={href}>
-        <a target='_blank'>{icon}</a>
+        <a href={href} target='_sub'>
+          {icon}
+        </a>
       </Link>
     </Container>
   );

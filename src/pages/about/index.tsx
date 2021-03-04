@@ -1,3 +1,4 @@
+import React from 'react';
 import styled, { ThemeType } from 'styled-components';
 
 const Container = styled.div`
@@ -74,13 +75,13 @@ const Content = styled.p<{ theme: ThemeType }>`
   }
 `;
 
-const About = () => {
+const About = (): React.ReactElement => {
   return (
     <Container>
       <Title>About</Title>
       <ProfileContainer>
         <ProfilePicture>
-          <Picture src={'/src/assets/images/profile_img.jpg'} alt='Picture' />
+          <Picture src='/src/assets/images/profile_img.jpg' alt='Picture' />
         </ProfilePicture>
         <ContentContainer>
           <ContentTitle>

@@ -1,8 +1,8 @@
-import GloablStyles from '#assets/styles/GloablStyles';
-import themes from '#assets/styles/themes';
 import React from 'react';
 import { ThemeProvider, ThemeType } from 'styled-components';
 import useDarkMode from 'use-dark-mode';
+import themes from '#assets/styles/themes.ts';
+import GloablStyles from '#assets/styles/GloablStyles.tsx';
 
 interface ProvidersType {
   children: React.ReactNode;
@@ -27,7 +27,7 @@ const Providers = ({ children }: ProvidersType): React.ReactElement => {
   );
 
   if (!mounted) {
-    return <div style={{ visibility: 'hidden' }}></div>;
+    return <div />;
   }
 
   return body;

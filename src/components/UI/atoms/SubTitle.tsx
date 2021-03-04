@@ -1,10 +1,10 @@
+import React from 'react';
 import Link from 'next/link';
 import styled from 'styled-components';
-import { Url } from 'url';
 
 interface SubTitleProps {
   label: string;
-  href: string | Url;
+  href: string;
   className?: string;
 }
 
@@ -35,11 +35,15 @@ const SubTitle = ({ label, href, className }: SubTitleProps): React.ReactElement
     <Container className={className}>
       {href ? (
         <Link href={href}>
-          <a>{label}</a>
+          <a href={href}>{label}</a>
         </Link>
       ) : null}
     </Container>
   );
+};
+
+SubTitle.defaultProps = {
+  className: '',
 };
 
 export default SubTitle;

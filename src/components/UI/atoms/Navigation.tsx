@@ -1,9 +1,9 @@
+import React from 'react';
 import Link from 'next/link';
 import styled from 'styled-components';
-import { Url } from 'url';
 
 export interface NavigationProps {
-  href: string | Url;
+  href: string;
   label: string;
   containerStyle?: React.CSSProperties;
 }
@@ -44,7 +44,7 @@ const Navigation = ({ href, label, containerStyle }: NavigationProps): React.Rea
   return (
     <Container style={containerStyle}>
       <Link href={href}>
-        <a>{label}</a>
+        <a href={href}>{label}</a>
       </Link>
     </Container>
   );

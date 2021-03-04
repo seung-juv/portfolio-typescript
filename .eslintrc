@@ -4,11 +4,22 @@
     "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
     "airbnb",
+    "airbnb/hooks",
     "plugin:prettier/recommended"
   ],
-  "plugins": ["eslint-plugin-no-inline-styles", "eslint-plugin-import", "babel-plugin-root-import"],
+  "plugins": ["eslint-plugin-no-inline-styles", "eslint-plugin-import"],
+  "env": {
+    "browser": true,
+    "node": true,
+    "jest": true
+  },
   "rules": {
-    "no-inline-styles/no-inline-styles": true,
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
+    "react/jsx-props-no-spreading": "off",
+    "no-use-before-define": "off",
+    "@typescript-eslint/no-use-before-define": ["error"],
+    "react/jsx-filename-extension": [2, { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
+    "no-inline-styles/no-inline-styles": 2,
     "import/extensions": [
       "error",
       "ignorePackages",
@@ -34,6 +45,7 @@
     ],
     "react/jsx-one-expression-per-line": 0,
     "no-unused-expressions": 0,
+    "@typescript-eslint/no-var-requires": 0,
     "one-var": 0,
     "no-underscore-dangle": 0,
     "no-plusplus": 0,
@@ -77,7 +89,7 @@
         },
         {
           "rootPathSuffix": ".",
-          "rootPathPrefix": "#/"
+          "rootPathPrefix": "#"
         }
       ],
       "node": {

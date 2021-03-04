@@ -1,8 +1,8 @@
-import { MouseEventHandler } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
 interface MenuButtonProps {
-  onClick: MouseEventHandler;
+  onClick: React.MouseEventHandler;
 }
 
 const Container = styled.a`

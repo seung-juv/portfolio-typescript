@@ -1,5 +1,7 @@
-const works = () => {
-  return <div></div>;
+import React from 'react';
+
+const Works = (): React.ReactElement => {
+  return <div />;
 };
 
-export default works;
+export default Works;
