@@ -38,8 +38,8 @@
             "rootPathPrefix": "#data/"
           },
           {
-            "rootPathSuffix": ".",
-            "rootPathPrefix": "#"
+            "rootPathSuffix": "./src",
+            "rootPathPrefix": "#/"
           }
         ]
       }

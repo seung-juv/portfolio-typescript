@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Facebook, Github, GooglePlus, Instagram } from '#components/UI/atoms/Icons.tsx';
+import { Facebook, Github, GooglePlus, Instagram } from '#components/UI/atoms/Icons';
 import Social, { SocialProps } from '../atoms/Social';
 
 type SocialItemsType = Array<SocialProps>;

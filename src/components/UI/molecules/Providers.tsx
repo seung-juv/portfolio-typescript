@@ -2,7 +2,7 @@ import React from 'react';
 import { ThemeProvider, ThemeType } from 'styled-components';
 import useDarkMode from 'use-dark-mode';
 import themes from '#assets/styles/themes.ts';
-import GloablStyles from '#assets/styles/GloablStyles.tsx';
+import GloablStyles from '#assets/styles/GloablStyles';
 
 interface ProvidersType {
   children: React.ReactNode;
