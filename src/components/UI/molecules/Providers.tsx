@@ -1,7 +1,7 @@
 import React from 'react';
 import { ThemeProvider, ThemeType } from 'styled-components';
 import useDarkMode from 'use-dark-mode';
-import themes from '#assets/styles/themes.ts';
+import themes from '#assets/styles/themes';
 import GloablStyles from '#assets/styles/GloablStyles';
 
 interface ProvidersType {

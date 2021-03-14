@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { workDatas } from '#data/workDatas.ts';
+import { workDatas } from '#data/workDatas';
 import SubTitle from '../atoms/SubTitle';
 import ProjectMainItem, { ProjectMainItemProps } from '../molecules/ProjectMainItem';
 
