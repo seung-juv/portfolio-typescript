@@ -23,6 +23,7 @@ const Container = styled.li`
     &:hover {
       &::after {
         width: 100%;
+        ${({ theme }) => theme.transition};
       }
     }
     &::after {
