@@ -1,4 +1,5 @@
 import React from 'react';
+import { Router } from 'next/dist/client/router';
 import styled from 'styled-components';
 import MenuButton from '#components/UI/atoms/MenuButton';
 import Providers from '#components/UI/molecules/Providers';
@@ -17,6 +18,11 @@ const Wrapper = styled.div`
 const Layout = ({ children }: LayoutType): React.ReactElement => {
   const [isVisibleMenu, setIsVisibleMenu] = React.useState(false);
   const toggleMenu = React.useCallback(() => setIsVisibleMenu(prevState => !prevState), []);
+  React.useEffect(() => {
+    Router.events.on('routeChangeComplete', (): void => {
+      setIsVisibleMenu(false);
+    });
+  }, []);
   return (
     <Providers>
       {isVisibleMenu ? <Menu /> : null}
