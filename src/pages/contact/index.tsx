@@ -104,7 +104,7 @@ const Contact = (): React.ReactElement => {
           <EInput
             {...phone}
             id='phone'
-            type='text'
+            type='tel'
             placeholder='Phone'
             autoComplete='tel-national'
           />
