@@ -5,6 +5,8 @@ import useInput from '#hooks/useInput';
 import Button from '#components/UI/atoms/Button';
 import Input from '#components/UI/atoms/Input';
 import Textarea from '#components/UI/atoms/Textarea';
+import Label from '#components/UI/atoms/Label';
+import FormRow from '#components/UI/molecules/FormRow';
 
 const Container = styled.div`
   width: 60%;
@@ -36,24 +38,16 @@ const FormContainer = styled.form`
   }
 `;
 
-const FormRow = styled.div`
-  display: flex;
-  align-items: center;
+const EFormRow = styled(FormRow)`
   &:not(:last-child) {
     margin-bottom: 2rem;
   }
-  @media screen and (max-width: 425px) {
-    width: 100%;
-    flex-flow: column nowrap;
-  }
 `;
 
-const Label = styled.label`
-  width: 15rem;
-  font-size: 1.5rem;
+const ELabel = styled(Label)`
+  flex-basis: 15rem;
   @media screen and (max-width: 425px) {
-    width: 100%;
-    margin-bottom: 1rem;
+    flex-basis: 3rem;
   }
 `;
 
@@ -97,16 +91,16 @@ const Contact = (): React.ReactElement => {
         Please feel free to contact me if you have any questions
       </SubTitle>
       <FormContainer onSubmit={onSubmit}>
-        <FormRow>
-          <Label htmlFor='name'>Name*</Label>
+        <EFormRow>
+          <ELabel htmlFor='name'>Name*</ELabel>
           <EInput {...name} id='name' type='text' placeholder='Name' />
-        </FormRow>
-        <FormRow>
-          <Label htmlFor='email'>Email*</Label>
+        </EFormRow>
+        <EFormRow>
+          <ELabel htmlFor='email'>Email*</ELabel>
           <EInput {...email} id='email' type='email' placeholder='Email' />
-        </FormRow>
-        <FormRow>
-          <Label htmlFor='phone'>Phone</Label>
+        </EFormRow>
+        <EFormRow>
+          <ELabel htmlFor='phone'>Phone</ELabel>
           <EInput
             {...phone}
             id='phone'
@@ -114,11 +108,11 @@ const Contact = (): React.ReactElement => {
             placeholder='Phone'
             autoComplete='tel-national'
           />
-        </FormRow>
-        <FormRow>
-          <Label htmlFor='content'>Content*</Label>
+        </EFormRow>
+        <EFormRow>
+          <ELabel htmlFor='content'>Content*</ELabel>
           <ETextarea {...content} id='content' rows={7} placeholder='Content' />
-        </FormRow>
+        </EFormRow>
         <Submit type='submit'>Submit</Submit>
       </FormContainer>
     </Container>
