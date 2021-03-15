@@ -1,7 +1,7 @@
 import 'styled-components';
 
 declare module 'styled-components' {
-  export interface ThemeType {
+  export interface DefaultTheme {
     backgroundColor: string;
     blackColor: string;
     whiteColor: string;
@@ -9,7 +9,7 @@ declare module 'styled-components' {
     darkGreyColor: string;
     lightGreyColor: string;
     transition: string;
+    blueColor: string;
+    blueHoverColor: string;
   }
-
-  export type DefaultTheme = ThemeType;
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import { ThemeProvider, ThemeType } from 'styled-components';
+import { DefaultTheme, ThemeProvider } from 'styled-components';
 import useDarkMode from 'use-dark-mode';
 import themes from '#assets/styles/themes';
 import GloablStyles from '#assets/styles/GloablStyles';
@@ -13,7 +13,7 @@ const Providers = ({ children }: ProvidersType): React.ReactElement => {
   const { value: isDark } = useDarkMode(undefined, {
     storageKey: 'dark-mode',
   });
-  const theme: ThemeType = isDark ? themes.dark : themes.light;
+  const theme: DefaultTheme = isDark ? themes.dark : themes.light;
 
   React.useEffect(() => {
     setMounted(true);
