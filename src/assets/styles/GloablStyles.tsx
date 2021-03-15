@@ -1,6 +1,6 @@
-import { createGlobalStyle, ThemeType } from 'styled-components';
+import { createGlobalStyle, DefaultTheme } from 'styled-components';
 
-export default createGlobalStyle<{ theme: ThemeType }>`
+export default createGlobalStyle<{ theme: DefaultTheme }>`
   html, body {
     line-height: 1;
     font-size: 10px;

@@ -1,5 +1,5 @@
 import React from 'react';
-import styled, { ThemeType } from 'styled-components';
+import styled from 'styled-components';
 
 const Container = styled.div`
   width: 60%;
@@ -38,7 +38,7 @@ const Picture = styled.img`
   width: 100%;
 `;
 
-const ContentContainer = styled.div<{ theme: ThemeType }>`
+const ContentContainer = styled.div`
   width: 60%;
   box-sizing: border-box;
   background-color: ${({ theme }) => theme.backgroundColor};
@@ -53,19 +53,19 @@ const ContentContainer = styled.div<{ theme: ThemeType }>`
   }
 `;
 
-const ContentTitle = styled.h5<{ theme: ThemeType }>`
+const ContentTitle = styled.h5`
   font-size: 1.8rem;
   margin-bottom: 2rem;
   color: ${({ theme }) => theme.blackColor};
 `;
 
-const ContentSubTitle = styled.small<{ theme: ThemeType }>`
+const ContentSubTitle = styled.small`
   font-size: 1.1rem;
   font-weight: 300;
   color: ${({ theme }) => theme.lightGreyColor};
 `;
 
-const Content = styled.p<{ theme: ThemeType }>`
+const Content = styled.p`
   font-size: 1.2rem;
   font-weight: 300;
   line-height: 2;
