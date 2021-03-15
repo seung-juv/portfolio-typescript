@@ -81,7 +81,7 @@ const About = (): React.ReactElement => {
       <Title>About</Title>
       <ProfileContainer>
         <ProfilePicture>
-          <Picture src='/src/assets/images/profile_img.jpg' alt='Picture' />
+          <Picture src='/images/profile_img.jpg' alt='Picture' />
         </ProfilePicture>
         <ContentContainer>
           <ContentTitle>
