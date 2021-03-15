@@ -103,11 +103,17 @@ const Contact = (): React.ReactElement => {
         </FormRow>
         <FormRow>
           <Label htmlFor='email'>Email*</Label>
-          <EInput {...email} id='email' type='text' placeholder='Email' />
+          <EInput {...email} id='email' type='email' placeholder='Email' />
         </FormRow>
         <FormRow>
           <Label htmlFor='phone'>Phone</Label>
-          <EInput {...phone} id='phone' type='text' placeholder='Phone' />
+          <EInput
+            {...phone}
+            id='phone'
+            type='text'
+            placeholder='Phone'
+            autoComplete='tel-national'
+          />
         </FormRow>
         <FormRow>
           <Label htmlFor='content'>Content*</Label>
