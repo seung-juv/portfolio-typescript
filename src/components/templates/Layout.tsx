@@ -28,7 +28,7 @@ const Layout = ({ children }: LayoutType): React.ReactElement => {
       {isVisibleMenu ? <Menu /> : null}
       <Wrapper>
         <Header />
-        <MenuButton onClick={toggleMenu} />
+        <MenuButton onClick={toggleMenu} isOpen={isVisibleMenu} />
         <main>{children}</main>
         <Footer />
       </Wrapper>

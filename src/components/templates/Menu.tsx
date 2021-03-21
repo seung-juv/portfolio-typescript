@@ -11,7 +11,7 @@ const Container = styled.div`
   position: fixed;
   top: 0;
   left: 0;
-  padding: 12.5rem 24rem;
+  padding: 12.5rem 20rem;
   z-index: 30;
   @media screen and (max-width: 768px) {
     padding: 12.5rem 0;
