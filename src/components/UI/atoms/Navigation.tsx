@@ -41,14 +41,16 @@ const Container = styled.li`
   }
 `;
 
-const Navigation = ({ href, label, containerStyle }: NavigationProps): React.ReactElement => {
-  return (
-    <Container style={containerStyle}>
-      <Link href={href}>
-        <a href={href}>{label}</a>
-      </Link>
-    </Container>
-  );
-};
+const Navigation = React.forwardRef(
+  ({ href, label, containerStyle }: NavigationProps, ref): React.ReactElement => {
+    return (
+      <Container ref={ref} style={containerStyle}>
+        <Link href={href}>
+          <a href={href}>{label}</a>
+        </Link>
+      </Container>
+    );
+  }
+);
 
 export default Navigation;

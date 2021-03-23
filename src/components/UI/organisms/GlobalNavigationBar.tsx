@@ -5,6 +5,7 @@ import Navigations from '../molecules/Navigations';
 
 interface GlobalNavigationBarProps {
   containerStyle?: React.CSSProperties;
+  isVisible: boolean;
 }
 
 const Container = styled.nav`
@@ -16,10 +17,13 @@ const Container = styled.nav`
   justify-content: space-between;
 `;
 
-const GlobalNavigationBar = ({ containerStyle }: GlobalNavigationBarProps): React.ReactElement => {
+const GlobalNavigationBar = ({
+  containerStyle,
+  isVisible,
+}: GlobalNavigationBarProps): React.ReactElement => {
   return (
     <Container style={containerStyle}>
-      <Navigations />
+      <Navigations isVisible={isVisible} />
       <Socials />
     </Container>
   );

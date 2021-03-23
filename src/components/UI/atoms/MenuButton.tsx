@@ -47,7 +47,7 @@ const Container = styled.a`
 `;
 
 const MenuButton = ({ onClick, isOpen, ...props }: MenuButtonProps): React.ReactElement => {
-  const [menuTimeline] = React.useState(gsap.timeline({ paused: true }));
+  const [timeline] = React.useState(gsap.timeline({ paused: true }));
 
   const menu = React.useRef<menuProps>({
     top: null,
@@ -55,7 +55,7 @@ const MenuButton = ({ onClick, isOpen, ...props }: MenuButtonProps): React.React
     bottom: null,
   });
   React.useEffect(() => {
-    menuTimeline
+    timeline
       .to(menu.current.top, { duration: 0.2, top: 9, rotation: 45, ease: 'power2' }, 0)
       .to(menu.current.middle, { duration: 0.2, alpha: 0, ease: 'power2' }, 0)
       .to(menu.current.bottom, { duration: 0.2, top: 9, rotation: -45, ease: 'power2' }, 0)
@@ -64,8 +64,8 @@ const MenuButton = ({ onClick, isOpen, ...props }: MenuButtonProps): React.React
   }, []);
 
   React.useEffect(() => {
-    menuTimeline.reversed(!isOpen);
-  }, [isOpen, menuTimeline]);
+    timeline.reversed(!isOpen);
+  }, [isOpen, timeline]);
 
   const onMouseEnter = React.useCallback(() => {
     if (!isOpen) {

@@ -1,7 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
+import { gsap } from 'gsap';
 import GlobalNavigationBar from '#components/UI/organisms/GlobalNavigationBar';
 import { Favicon } from '#components/UI/atoms/Icons';
+
+interface MenuProps {
+  isVisible: boolean;
+}
 
 const Container = styled.div`
   width: 100vw;
@@ -30,16 +35,24 @@ const Shadow = styled.div`
   }
 `;
 
-const Menu = (): React.ReactElement => {
+const Menu = ({ isVisible }: MenuProps): React.ReactElement => {
+  const [timeline] = React.useState(gsap.timeline({ paused: true }));
+  const containerRef = React.useRef(null);
   React.useEffect(() => {
-    document.body.style.overflow = 'hidden';
-    return () => {
-      document.body.style.overflow = 'visible';
-    };
+    timeline.to(containerRef.current, { duration: 0.2, autoAlpha: 0, ease: 'power2' }, 0).reverse();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+  React.useEffect(() => {
+    timeline.reversed(isVisible);
+    if (isVisible) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'visible';
+    }
+  }, [isVisible, timeline]);
   return (
-    <Container>
-      <GlobalNavigationBar />
+    <Container ref={containerRef}>
+      <GlobalNavigationBar isVisible={isVisible} />
       <Shadow>
         <Favicon size={100} />
       </Shadow>
