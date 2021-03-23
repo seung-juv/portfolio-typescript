@@ -48,6 +48,7 @@ const Container = styled.a`
 
 const MenuButton = ({ onClick, isOpen, ...props }: MenuButtonProps): React.ReactElement => {
   const [menuTimeline] = React.useState(gsap.timeline({ paused: true }));
+
   const menu = React.useRef<menuProps>({
     top: null,
     middle: null,
@@ -55,9 +56,9 @@ const MenuButton = ({ onClick, isOpen, ...props }: MenuButtonProps): React.React
   });
   React.useEffect(() => {
     menuTimeline
-      .to(menu.current.top, { duration: 0.2, top: 9, rotation: 45 }, 0)
-      .to(menu.current.middle, { duration: 0.2, alpha: 0 }, 0)
-      .to(menu.current.bottom, { duration: 0.2, top: 9, rotation: -45 }, 0)
+      .to(menu.current.top, { duration: 0.2, top: 9, rotation: 45, ease: 'power2' }, 0)
+      .to(menu.current.middle, { duration: 0.2, alpha: 0, ease: 'power2' }, 0)
+      .to(menu.current.bottom, { duration: 0.2, top: 9, rotation: -45, ease: 'power2' }, 0)
       .reverse();
   }, []);
 
@@ -65,8 +66,28 @@ const MenuButton = ({ onClick, isOpen, ...props }: MenuButtonProps): React.React
     menuTimeline.reversed(!isOpen);
   }, [isOpen, menuTimeline]);
 
+  const onMouseEnter = React.useCallback(() => {
+    if (!isOpen) {
+      gsap.to(menu.current.top, { duration: 0.2, top: -3, ease: 'power2' });
+      gsap.to(menu.current.bottom, { duration: 0.2, top: 21, ease: 'power2' });
+    }
+  }, [menu, isOpen]);
+
+  const onMouseLeave = React.useCallback(() => {
+    if (!isOpen) {
+      gsap.to(menu.current.top, { duration: 0.2, top: 0, ease: 'power2' });
+      gsap.to(menu.current.bottom, { duration: 0.2, top: 18, ease: 'power2' });
+    }
+  }, [menu, isOpen]);
+
   return (
-    <Container aria-label='Main navigation menu' onClick={onClick} {...props}>
+    <Container
+      aria-label='Main navigation menu'
+      onClick={onClick}
+      {...props}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
+    >
       <Line
         ref={ref => {
           menu.current.top = ref;
