@@ -1,8 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import { workDatas } from '#data/workDatas';
 import SubTitle from '../atoms/SubTitle';
 import ProjectMainItem, { ProjectMainItemProps } from '../molecules/ProjectMainItem';
+
+type projectsType = Array<HTMLDivElement> | Array<undefined>;
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Wrapper = styled.div``;
 
@@ -26,13 +32,74 @@ const Container = styled.div`
 `;
 
 const MainProjects = (): React.ReactElement => {
+  const [data] = React.useState(workDatas);
+  const projectsRef = React.useRef<projectsType>([]);
+  const animate = React.useCallback((element, direction?, from?) => {
+    let x = 0;
+    const y = direction * 100;
+    if (from === 'left') {
+      x = -100;
+    } else if (from === 'right') {
+      x = 100;
+    }
+    gsap.fromTo(
+      element,
+      { delay: 0.25, x, y, autoAlpha: 0 },
+      {
+        duration: 1.25,
+        delay: 0.25,
+        x: 0,
+        y: 0,
+        autoAlpha: 1,
+        ease: 'expo',
+        overwrite: 'auto',
+      }
+    );
+  }, []);
+
+  const hide = React.useCallback(element => {
+    gsap.set(element, { autoAlpha: 0 });
+  }, []);
+
+  React.useEffect(() => {
+    let unsubscribe;
+    if (projectsRef.current.length > 0) {
+      unsubscribe = projectsRef.current.forEach(
+        (element: HTMLDivElement | undefined, index: number): void => {
+          const even = index % 2 === 0;
+          hide(element); // assure that the element is hidden when scrolled into view
+          ScrollTrigger.create({
+            trigger: element,
+            onEnter: () => {
+              animate(element, null, even ? 'right' : 'left');
+            },
+            onEnterBack: () => {
+              animate(element, -1, even ? 'right' : 'left');
+            },
+            onLeave: () => {
+              hide(element);
+            }, // assure that the element is hidden when scrolled into view
+          });
+        }
+      );
+    }
+    return unsubscribe;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [projectsRef]);
+
   return (
     <Wrapper>
       <MainProjectSubTitle label='Works' href='/works' />
       <Container>
-        {workDatas?.map(
-          (item: ProjectMainItemProps): React.ReactElement => (
-            <ProjectMainItem key={item.id} {...item} />
+        {data?.map(
+          (item: ProjectMainItemProps, index: number): React.ReactElement => (
+            <ProjectMainItem
+              key={item.id}
+              ref={ref => {
+                projectsRef.current[index] = ref || undefined;
+              }}
+              {...item}
+            />
           )
         )}
       </Container>

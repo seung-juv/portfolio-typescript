@@ -38,26 +38,20 @@ const Container = styled.div`
   }
 `;
 
-const ProjectMainItem = ({
-  id,
-  className,
-  background,
-  thumb,
-  project,
-  caption,
-  category,
-}: ProjectMainItemProps): React.ReactElement => {
-  return (
-    <Container className={className}>
-      <Link href={`/works/${id}`}>
-        <a href={`/works/${id}`}>
-          <Thumbnail background={background} thumb={thumb} />
-          <Meta category={category} />
-          <Title title={project} caption={caption} />
-        </a>
-      </Link>
-    </Container>
-  );
-};
+const ProjectMainItem = React.forwardRef<HTMLDivElement, ProjectMainItemProps>(
+  ({ id, className, background, thumb, project, caption, category }, ref): React.ReactElement => {
+    return (
+      <Container ref={ref} className={className}>
+        <Link href={`/works/${id}`}>
+          <a href={`/works/${id}`}>
+            <Thumbnail background={background} thumb={thumb} />
+            <Meta category={category} />
+            <Title title={project} caption={caption} />
+          </a>
+        </Link>
+      </Container>
+    );
+  }
+);
 
 export default ProjectMainItem;

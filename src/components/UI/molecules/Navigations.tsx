@@ -13,7 +13,6 @@ export interface NavigationsProps {
 const Container = styled.ul``;
 
 const Navigations = ({ isVisible, containerStyle }: NavigationsProps): React.ReactElement => {
-  const [timeline] = React.useState(gsap.timeline);
   const items: NavigationItemsType = React.useMemo(
     () => [
       {
