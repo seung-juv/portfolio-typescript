@@ -2,7 +2,7 @@ import React from 'react';
 import { DefaultTheme, ThemeProvider } from 'styled-components';
 import useDarkMode from 'use-dark-mode';
 import themes from '#assets/styles/themes';
-import GloablStyles from '#assets/styles/GloablStyles';
+import GlobalStyle from '#assets/styles/GlobalStyle';
 
 interface ProvidersType {
   children: React.ReactNode;
@@ -21,7 +21,7 @@ const Providers = ({ children }: ProvidersType): React.ReactElement => {
 
   const body = (
     <ThemeProvider theme={theme}>
-      <GloablStyles />
+      <GlobalStyle />
       {children}
     </ThemeProvider>
   );
