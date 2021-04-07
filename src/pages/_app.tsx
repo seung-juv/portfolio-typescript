@@ -5,6 +5,12 @@ import '#assets/scss/main.scss';
 import Layout from '#components/templates/Layout';
 
 const App: React.FC<AppProps> = ({ Component, pageProps }: AppProps) => {
+  React.useEffect(() => {
+    document.addEventListener('scroll', (event) => {
+      const { scrollHeight } = document?.body || {};
+      console.log(scrollHeight)
+    });
+  }, []);
   return (
     <Layout>
       <Head>
