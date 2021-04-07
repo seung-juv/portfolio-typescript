@@ -6,9 +6,9 @@ import { workDatas } from '#data/workDatas';
 import SubTitle from '../atoms/SubTitle';
 import ProjectMainItem, { ProjectMainItemProps } from '../molecules/ProjectMainItem';
 
-type projectsType = Array<HTMLDivElement> | Array<undefined>;
-
 gsap.registerPlugin(ScrollTrigger);
+
+type projectsType = Array<HTMLDivElement> | Array<undefined>;
 
 const Wrapper = styled.div``;
 
@@ -84,7 +84,6 @@ const MainProjects = (): React.ReactElement => {
       );
     }
     return unsubscribe;
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [projectsRef]);
 
   return (

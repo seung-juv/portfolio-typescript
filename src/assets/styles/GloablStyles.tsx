@@ -8,6 +8,7 @@ export default createGlobalStyle<{ theme: DefaultTheme }>`
     letter-spacing: -0.05rem;
     background-color: ${({ theme }) => theme.backgroundColor};
     color: ${({ theme }) => theme.blackColor};
+    overflow: hidden;
   }
   svg {
     fill: ${({ theme }) => theme.blackColor};

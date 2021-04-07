@@ -44,7 +44,6 @@ const Navigations = ({ isVisible, containerStyle }: NavigationsProps): React.Rea
         ease: 'power2',
       })
       .reverse();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isVisible]);
 
   return (

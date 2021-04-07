@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { gsap } from 'gsap';
 import GlobalNavigationBar from '#components/UI/organisms/GlobalNavigationBar';
 import { Favicon } from '#components/UI/atoms/Icons';
+import useScroll from '#hooks/useScroll';
 
 interface MenuProps {
   isVisible: boolean;
@@ -38,16 +39,16 @@ const Shadow = styled.div`
 const Menu = ({ isVisible }: MenuProps): React.ReactElement => {
   const [timeline] = React.useState(gsap.timeline({ paused: true }));
   const containerRef = React.useRef(null);
+  const { enableScroll, disableScroll } = useScroll();
   React.useEffect(() => {
     timeline.to(containerRef.current, { duration: 0.2, autoAlpha: 0, ease: 'power2' }, 0).reverse();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   React.useEffect(() => {
     timeline.reversed(isVisible);
     if (isVisible) {
-      document.body.style.overflow = 'hidden';
+      disableScroll();
     } else {
-      document.body.style.overflow = 'visible';
+      enableScroll();
     }
   }, [isVisible, timeline]);
   return (

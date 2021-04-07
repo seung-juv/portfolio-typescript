@@ -38,7 +38,6 @@ const ScrollLine = ({ className }: ScrollLineProps): React.ReactElement => {
   React.useEffect(() => {
     const unsubscribe = window.addEventListener('scroll', getScrollValue);
     return unsubscribe;
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

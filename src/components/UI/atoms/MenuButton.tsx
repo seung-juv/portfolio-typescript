@@ -60,7 +60,6 @@ const MenuButton = ({ onClick, isOpen, ...props }: MenuButtonProps): React.React
       .to(menu.current.middle, { duration: 0.2, alpha: 0, ease: 'power2' }, 0)
       .to(menu.current.bottom, { duration: 0.2, top: 9, rotation: -45, ease: 'power2' }, 0)
       .reverse();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   React.useEffect(() => {

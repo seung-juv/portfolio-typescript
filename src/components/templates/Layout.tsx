@@ -6,6 +6,7 @@ import Providers from '#components/UI/molecules/Providers';
 import Footer from '#components/UI/organisms/Footer';
 import Header from '#components/UI/organisms/Header';
 import Menu from '#components/templates/Menu';
+import useScroll from '#hooks/useScroll';
 
 interface LayoutType {
   children: React.ReactNode;
@@ -17,12 +18,18 @@ const Wrapper = styled.div`
 
 const Layout = ({ children }: LayoutType): React.ReactElement => {
   const [isVisibleMenu, setIsVisibleMenu] = React.useState(false);
+  const { enableScroll } = useScroll();
   const toggleMenu = React.useCallback(() => setIsVisibleMenu(prevState => !prevState), []);
   React.useEffect(() => {
     Router.events.on('routeChangeComplete', (): void => {
       setIsVisibleMenu(false);
     });
   }, []);
+
+  React.useEffect(() => {
+    enableScroll();
+  }, []);
+
   return (
     <Providers>
       <Menu isVisible={isVisibleMenu} />
