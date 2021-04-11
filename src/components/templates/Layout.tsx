@@ -18,16 +18,14 @@ const Wrapper = styled.div`
 
 const Layout = ({ children }: LayoutType): React.ReactElement => {
   const [isVisibleMenu, setIsVisibleMenu] = React.useState(false);
-  const { enableScroll } = useScroll();
+  const { enableScroll, disableScroll } = useScroll();
   const toggleMenu = React.useCallback(() => setIsVisibleMenu(prevState => !prevState), []);
   React.useEffect(() => {
+    enableScroll();
     Router.events.on('routeChangeComplete', (): void => {
+      disableScroll();
       setIsVisibleMenu(false);
     });
-  }, []);
-
-  React.useEffect(() => {
-    enableScroll();
   }, []);
 
   return (

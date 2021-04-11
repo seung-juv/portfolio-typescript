@@ -48,7 +48,9 @@
     "no-bitwise": 0,
     "no-shadow": 0,
     "react-native/split-platform-components": 0,
-    "no-throw-literal": 0
+    "no-throw-literal": 0,
+    "react/require-default-props": 0,
+    "react/no-array-index-key": 0
   },
   "settings": {
     "import/resolver": {
@@ -56,6 +58,10 @@
         {
           "rootPathSuffix": "./src/assets",
           "rootPathPrefix": "#assets/"
+        },
+        {
+          "rootPathSuffix": "./src/types",
+          "rootPathPrefix": "#types/"
         },
         {
           "rootPathSuffix": "./src/components",

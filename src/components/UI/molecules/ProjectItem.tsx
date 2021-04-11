@@ -4,15 +4,10 @@ import styled from 'styled-components';
 import Meta from '../atoms/Meta';
 import Title from '../atoms/Title';
 import Thumbnail from '../atoms/Thumbnail';
+import { WorkType } from '#types/workType';
 
-export interface ProjectMainItemProps {
-  id: number;
+export interface ProjectItemProps extends WorkType {
   className?: string;
-  background: string;
-  thumb: string;
-  project: string;
-  caption: string;
-  category: string;
 }
 
 const Container = styled.div`
@@ -38,7 +33,7 @@ const Container = styled.div`
   }
 `;
 
-const ProjectMainItem = React.forwardRef<HTMLDivElement, ProjectMainItemProps>(
+const ProjectItem = React.forwardRef<HTMLDivElement, ProjectItemProps>(
   ({ id, className, background, thumb, project, caption, category }, ref): React.ReactElement => {
     return (
       <Container ref={ref} className={className}>
@@ -54,4 +49,4 @@ const ProjectMainItem = React.forwardRef<HTMLDivElement, ProjectMainItemProps>(
   }
 );
 
-export default ProjectMainItem;
+export default ProjectItem;

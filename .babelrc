@@ -18,6 +18,10 @@
             "rootPathPrefix": "#assets/"
           },
           {
+            "rootPathSuffix": "./src/types",
+            "rootPathPrefix": "#types/"
+          },
+          {
             "rootPathSuffix": "./src/components",
             "rootPathPrefix": "#components/"
           },

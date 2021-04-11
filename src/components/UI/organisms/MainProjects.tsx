@@ -4,7 +4,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import { workDatas } from '#data/workDatas';
 import SubTitle from '../atoms/SubTitle';
-import ProjectMainItem, { ProjectMainItemProps } from '../molecules/ProjectMainItem';
+import ProjectItem from '../molecules/ProjectItem';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -91,8 +91,8 @@ const MainProjects = (): React.ReactElement => {
       <MainProjectSubTitle label='Works' href='/works' />
       <Container>
         {data?.map(
-          (item: ProjectMainItemProps, index: number): React.ReactElement => (
-            <ProjectMainItem
+          (item, index: number): React.ReactElement => (
+            <ProjectItem
               key={item.id}
               ref={ref => {
                 projectsRef.current[index] = ref || undefined;

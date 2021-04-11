@@ -14,7 +14,6 @@ export const workDatas = [
   },
   {
     id: 1,
-    pid: 'prismabook',
     type: 'web',
     project: 'Prismabook',
     background: 'background_gradient_2',
@@ -28,7 +27,6 @@ export const workDatas = [
   },
   {
     id: 2,
-    pid: 'nwitter',
     type: 'web',
     project: 'Nwitter',
     background: 'background_gradient_3',
