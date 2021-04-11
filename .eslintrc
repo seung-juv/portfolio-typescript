@@ -50,7 +50,8 @@
     "react-native/split-platform-components": 0,
     "no-throw-literal": 0,
     "react/require-default-props": 0,
-    "react/no-array-index-key": 0
+    "react/no-array-index-key": 0,
+    "@typescript-eslint/ban-types": 0
   },
   "settings": {
     "import/resolver": {
