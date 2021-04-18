@@ -1,17 +1,13 @@
 import React from 'react';
-import Button from './Button';
-
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  children?: React.ReactNode;
-}
+import { Story } from '@storybook/react';
+import Button, { ButtonProps } from './Button';
 
 export default {
   title: 'Button',
   component: Button,
 };
 
-const Template = (args: ButtonProps): React.ReactElement => <Button {...args} />;
-
+const Template: Story<ButtonProps> = args => <Button {...args} />;
 export const Default = Template.bind({});
 Default.args = {
   children: 'Button',
