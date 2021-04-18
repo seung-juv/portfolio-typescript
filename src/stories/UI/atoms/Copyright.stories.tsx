@@ -1,9 +1,9 @@
 import React from 'react';
 import { Story } from '@storybook/react';
-import Copyright from './Copyright';
+import Copyright from '#components/UI/atoms/Copyright';
 
 export default {
-  title: 'Copyright',
+  title: 'UI/atoms/Copyright',
   component: Copyright,
 };
 
