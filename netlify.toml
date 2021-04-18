@@ -1,6 +1,5 @@
 [build]
-  command = "yarn build"
-  command = "yarn storybook"
+  command = "yarn build && yarn storybook"
   build = "build"
 
 [[plugins]]
