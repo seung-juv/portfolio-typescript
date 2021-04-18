@@ -1,6 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 
+export interface CopyrightProps extends React.HTMLAttributes<HTMLSpanElement> {
+  children?: React.ReactNode;
+}
+
 const Container = styled.span`
   color: ${({ theme }) => theme.lightGreyColor};
   font-size: 1.2rem;
@@ -8,8 +12,8 @@ const Container = styled.span`
   font-weight: 300;
 `;
 
-const Copyright = (props: React.HTMLAttributes<HTMLSpanElement>): React.ReactElement => {
-  return <Container {...props}>&copy;2021. Seung Ju PortFolio All rights reserved.</Container>;
+const Copyright = ({ children, ...props }: CopyrightProps): React.ReactElement => {
+  return <Container {...props}>{children}</Container>;
 };
 
 export default Copyright;

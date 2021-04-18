@@ -10,5 +10,5 @@ export default {
 const Template: Story = args => <Copyright {...args} />;
 export const Default = Template.bind({});
 Default.args = {
-  children: 'Button',
+  children: '\u00A92021. Seung Ju PortFolio All rights reserved.',
 };

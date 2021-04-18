@@ -8,8 +8,12 @@ const Container = styled.button`
   height: 3.4rem;
   border-radius: 3.4rem;
   background-color: ${({ theme }) => theme.blackColor};
+  ${({ theme }) => theme.transition};
   svg {
     fill: ${({ theme }) => theme.whiteColor};
+  }
+  &:hover {
+    background-color: ${({ theme }) => theme.blackColor}75;
   }
   @media screen and (max-width: 768px) {
     display: none;

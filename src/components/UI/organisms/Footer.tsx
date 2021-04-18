@@ -20,7 +20,7 @@ const Container = styled.footer`
 const Footer = (): React.ReactElement => {
   return (
     <Container>
-      <Copyright />
+      <Copyright>&copy;2021. Seung Ju PortFolio All rights reserved.</Copyright>
     </Container>
   );
 };
