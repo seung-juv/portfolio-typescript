@@ -4,13 +4,13 @@ import { useDarkMode } from 'storybook-dark-mode';
 import { ThemeProvider } from 'styled-components';
 import { themes as stroybookThemes } from '@storybook/theming';
 import themes from '../src/assets/styles/themes';
-import GlobalStyle from '../src/assets/styles/GlobalStyle';
+import StorybookStyle from '../src/assets/styles/StorybookStyle';
 
 const withStyles = story => {
   const isDark = useDarkMode();
   return (
     <ThemeProvider theme={isDark ? themes.dark : themes.light}>
-      <GlobalStyle />
+      <StorybookStyle />
       {story()}
     </ThemeProvider>
   );
