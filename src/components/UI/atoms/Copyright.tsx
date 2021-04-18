@@ -8,8 +8,8 @@ const Container = styled.span`
   font-weight: 300;
 `;
 
-const Copyright = (): React.ReactElement => {
-  return <Container>&copy;2021. Seung Ju PortFolio All rights reserved.</Container>;
+const Copyright = (props: React.HTMLAttributes<HTMLSpanElement>): React.ReactElement => {
+  return <Container {...props}>&copy;2021. Seung Ju PortFolio All rights reserved.</Container>;
 };
 
 export default Copyright;

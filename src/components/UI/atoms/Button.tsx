@@ -7,6 +7,7 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
 
 const Container = styled.button`
   padding: 1.2rem 1.8rem;
+  height: 4rem;
   background-color: ${({ theme }) => theme.blueColor};
   color: #ffffff;
   font-size: 1.43rem;
@@ -23,6 +24,7 @@ const Button = ({ children, ...props }: ButtonProps): React.ReactElement => {
 
 Button.defaultProps = {
   children: 'button',
+  type: 'button',
 };
 
 export default Button;
