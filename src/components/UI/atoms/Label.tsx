@@ -7,11 +7,14 @@ const Container = styled.label`
   font-weight: 400;
 `;
 
-const Label = ({
-  children,
-  ...props
-}: React.LabelHTMLAttributes<HTMLLabelElement>): React.ReactElement => {
-  return <Container {...props}>{children}</Container>;
-};
+const Label = React.forwardRef<HTMLLabelElement, React.LabelHTMLAttributes<HTMLLabelElement>>(
+  ({ children, ...props }, ref): React.ReactElement => {
+    return (
+      <Container ref={ref} {...props}>
+        {children}
+      </Container>
+    );
+  }
+);
 
 export default Label;
