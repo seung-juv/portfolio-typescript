@@ -8,6 +8,8 @@ class RootDocument extends Document {
         <Head>
           <link rel='icon' href='/favicon.ico' />
           <link rel='apple-touch-icon' href='/logo192.png' />
+          <link rel='stylesheet' href='//fonts.googleapis.com/earlyaccess/notosanskr.css' />
+          <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Roboto:400,100,700' />
         </Head>
         <body>
           <Main />

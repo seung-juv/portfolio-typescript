@@ -3,8 +3,6 @@ import reset from 'styled-reset';
 
 export default createGlobalStyle<{ theme: DefaultTheme }>`
   ${reset};
-  @import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
-  @import url(//fonts.googleapis.com/css?family=Roboto:400,100,700);
   * {
     box-sizing: border-box;
     &::before {
