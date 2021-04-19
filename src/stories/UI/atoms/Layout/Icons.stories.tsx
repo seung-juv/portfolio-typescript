@@ -1,9 +1,9 @@
 import React from 'react';
 import { Story } from '@storybook/react';
-import * as Icons from '#components/UI/atoms/Icons';
+import * as Icons from '#components/UI/atoms/Layout/Icons';
 
 export default {
-  title: 'UI/atoms/Icons',
+  title: 'UI/atoms/Layout/Icons',
   component: Icons,
 };
 

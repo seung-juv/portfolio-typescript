@@ -1,9 +1,9 @@
 import React from 'react';
 import { Story } from '@storybook/react';
-import Input from '#components/UI/atoms/Input';
+import Input from '#components/UI/atoms/Layout/Input';
 
 export default {
-  title: 'UI/atoms/Input',
+  title: 'UI/atoms/Layout/Input',
   component: Input,
 };
 

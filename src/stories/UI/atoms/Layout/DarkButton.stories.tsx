@@ -1,9 +1,9 @@
 import React from 'react';
 import { Story } from '@storybook/react';
-import DarkButton from '#components/UI/atoms/DarkButton';
+import DarkButton from '#components/UI/atoms/Layout/DarkButton';
 
 export default {
-  title: 'UI/atoms/DarkButton',
+  title: 'UI/atoms/Layout/DarkButton',
   component: DarkButton,
 };
 

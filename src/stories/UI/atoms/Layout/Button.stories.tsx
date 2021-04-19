@@ -1,9 +1,9 @@
 import React from 'react';
 import { Story } from '@storybook/react';
-import Button, { ButtonProps } from '#components/UI/atoms/Button';
+import Button, { ButtonProps } from '#components/UI/atoms/Layout/Button';
 
 export default {
-  title: 'UI/atoms/Button',
+  title: 'UI/atoms/Layout/Button',
   component: Button,
 };
 

@@ -3,7 +3,7 @@ import { Story } from '@storybook/react';
 import MenuButton, { MenuButtonProps } from '#components/UI/atoms/MenuButton';
 
 export default {
-  title: 'UI/atoms/MenuButton',
+  title: 'UI/atoms/Layout/MenuButton',
   component: MenuButton,
 };
 
