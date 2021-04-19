@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import DarkButton from '../atoms/DarkButton';
+import DarkButton from '../atoms/Layout/DarkButton';
 import Logo from '../atoms/Logo';
-import ScrollLine from '../atoms/ScrollLine';
+import ScrollLine from '../atoms/Layout/ScrollLine';
 
 const Container = styled.header`
   width: 6rem;

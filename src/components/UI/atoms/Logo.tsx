@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import styled from 'styled-components';
-import { Favicon } from './Icons';
+import { Favicon } from './Layout/Icons';
 
 interface LogoProps {
   className?: string;

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Copyright from '../atoms/Copyright';
+import Copyright from '../atoms/Layout/Copyright';
 
 const Container = styled.footer`
   transform: rotate(270deg);

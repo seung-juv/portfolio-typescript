@@ -1,7 +1,7 @@
 import React from 'react';
 import { Router } from 'next/dist/client/router';
 import styled from 'styled-components';
-import MenuButton from '#components/UI/atoms/MenuButton';
+import MenuButton from '#components/UI/atoms/Layout/MenuButton';
 import Providers from '#components/UI/molecules/Providers';
 import Footer from '#components/UI/organisms/Footer';
 import Header from '#components/UI/organisms/Header';

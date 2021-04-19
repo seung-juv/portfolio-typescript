@@ -2,10 +2,10 @@ import React from 'react';
 import Head from 'next/head';
 import styled from 'styled-components';
 import useInput from '#hooks/useInput';
-import Button from '#components/UI/atoms/Button';
-import Input from '#components/UI/atoms/Input';
-import Textarea from '#components/UI/atoms/Textarea';
-import Label from '#components/UI/atoms/Label';
+import Button from '#components/UI/atoms/Layout/Button';
+import Input from '#components/UI/atoms/Layout/Input';
+import Textarea from '#components/UI/atoms/Layout/Textarea';
+import Label from '#components/UI/atoms/Layout/Label';
 import FormRow from '#components/UI/molecules/FormRow';
 
 const Container = styled.div`
