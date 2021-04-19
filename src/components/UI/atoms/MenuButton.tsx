@@ -2,8 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { gsap } from 'gsap';
 
-interface MenuButtonProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
-  onClick: React.MouseEventHandler;
+export interface MenuButtonProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   isOpen: boolean;
 }
 
@@ -12,6 +11,15 @@ interface menuProps {
   middle: HTMLSpanElement | null;
   bottom: HTMLSpanElement | null;
 }
+
+const Container = styled.a`
+  display: block;
+  position: relative;
+  width: 5rem;
+  height: 2.1rem;
+  cursor: pointer;
+  z-index: 50;
+`;
 
 const Line = styled.span`
   display: block;
@@ -31,22 +39,7 @@ const Line = styled.span`
   }
 `;
 
-const Container = styled.a`
-  display: block;
-  width: 5rem;
-  height: 2.1rem;
-  cursor: pointer;
-  top: 5rem;
-  right: 5rem;
-  position: fixed;
-  z-index: 50;
-
-  @media screen and (max-width: 1024px) {
-    right: 2rem;
-  }
-`;
-
-const MenuButton = ({ onClick, isOpen, ...props }: MenuButtonProps): React.ReactElement => {
+const MenuButton = ({ isOpen, ...props }: MenuButtonProps): React.ReactElement => {
   const [timeline] = React.useState(gsap.timeline({ paused: true }));
 
   const menu = React.useRef<menuProps>({
@@ -54,6 +47,7 @@ const MenuButton = ({ onClick, isOpen, ...props }: MenuButtonProps): React.React
     middle: null,
     bottom: null,
   });
+
   React.useEffect(() => {
     timeline
       .to(menu.current.top, { duration: 0.2, top: 9, rotation: 45, ease: 'power2' }, 0)
@@ -83,10 +77,9 @@ const MenuButton = ({ onClick, isOpen, ...props }: MenuButtonProps): React.React
   return (
     <Container
       aria-label='Main navigation menu'
-      onClick={onClick}
-      {...props}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
+      {...props}
     >
       <Line
         ref={ref => {
