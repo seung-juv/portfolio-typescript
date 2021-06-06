@@ -16,6 +16,12 @@ const Wrapper = styled.div`
   padding: 15rem 0;
 `;
 
+const EMenuButton = styled(MenuButton)`
+  position: fixed;
+  right: 5rem;
+  top: 4rem;
+`;
+
 const Layout = ({ children }: LayoutType): React.ReactElement => {
   const [isVisibleMenu, setIsVisibleMenu] = React.useState(false);
   const { enableScroll, disableScroll } = useScroll();
@@ -33,7 +39,7 @@ const Layout = ({ children }: LayoutType): React.ReactElement => {
       <Menu isVisible={isVisibleMenu} />
       <Wrapper>
         <Header />
-        <MenuButton onClick={toggleMenu} isOpen={isVisibleMenu} />
+        <EMenuButton onClick={toggleMenu} isOpen={isVisibleMenu} />
         <main>{children}</main>
         <Footer />
       </Wrapper>
