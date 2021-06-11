@@ -51,7 +51,9 @@
     "no-throw-literal": 0,
     "react/require-default-props": 0,
     "react/no-array-index-key": 0,
-    "@typescript-eslint/ban-types": 0
+    "@typescript-eslint/ban-types": 0,
+    "jsx-a11y/anchor-is-valid": 0,
+    "@typescript-eslint/no-explicit-any": 0
   },
   "settings": {
     "import/resolver": {

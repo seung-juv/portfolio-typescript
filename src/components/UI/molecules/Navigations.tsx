@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { gsap } from 'gsap';
-import Navigation, { NavigationProps } from '../atoms/Navigation';
+import Navigation, { NavigationProps } from '../atoms/Button/lib/Navigation';
 
 type NavigationItemsType = Array<NavigationProps>;
 

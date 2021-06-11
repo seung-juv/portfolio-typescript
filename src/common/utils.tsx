@@ -1,5 +1,5 @@
 import React from 'react';
-import { ReactIcon, Graphql, PrismaIcon, FirebaseIcon } from '#components/UI/atoms/Layout/Icons';
+import { ReactIcon, Graphql, PrismaIcon, FirebaseIcon } from '#components/UI/atoms/Icon';
 
 export const getIcon = (tool: string, size?: number): React.ReactElement | null => {
   switch (tool) {

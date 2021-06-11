@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { gsap } from 'gsap';
 import GlobalNavigationBar from '#components/UI/organisms/GlobalNavigationBar';
-import { Favicon } from '#components/UI/atoms/Layout/Icons';
+import { Favicon } from '#components/UI/atoms/Icon';
 import useScroll from '#hooks/useScroll';
 
 interface MenuProps {
