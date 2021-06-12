@@ -31,6 +31,7 @@
       "#hooks/*": ["./hooks/*"],
       "#store/*": ["./store/*"],
       "#data/*": ["./data/*"],
+      "#apis/*": ["./apis/*"],
       "#/*": ["./*"]
     },
     "rootDir": "."

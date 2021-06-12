@@ -42,6 +42,10 @@
             "rootPathPrefix": "#data/"
           },
           {
+            "rootPathSuffix": "./src/apis",
+            "rootPathPrefix": "#apis/"
+          },
+          {
             "rootPathSuffix": "./src",
             "rootPathPrefix": "#/"
           }

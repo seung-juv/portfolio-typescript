@@ -1,14 +1,11 @@
-import React from 'react';
+import React, { HTMLAttributes } from 'react';
 import Link from 'next/link';
 import styled from 'styled-components';
-import Meta from '../atoms/Meta';
-import Title from '../atoms/Title';
-import Thumbnail from '../atoms/Thumbnail';
 import { WorkType } from '#types/workType';
+import Typograph from '../atoms/Typograph';
+import Thumbnail from '../atoms/Video/lib/Thumbnail';
 
-export interface ProjectItemProps extends WorkType {
-  className?: string;
-}
+export interface ProjectItemProps extends WorkType, Omit<HTMLAttributes<HTMLDivElement>, 'id'> {}
 
 const Container = styled.div`
   position: relative;
@@ -34,14 +31,15 @@ const Container = styled.div`
 `;
 
 const ProjectItem = React.forwardRef<HTMLDivElement, ProjectItemProps>(
-  ({ id, className, background, thumb, project, caption, category }, ref): React.ReactElement => {
+  ({ id, background, video, project, caption, category, ...props }, ref): React.ReactElement => {
     return (
-      <Container ref={ref} className={className}>
+      <Container ref={ref} {...props}>
         <Link href={`/works/${id}`}>
           <a href={`/works/${id}`}>
-            <Thumbnail background={background} thumb={thumb} />
-            <Meta category={category} />
-            <Title title={project} caption={caption} />
+            <Thumbnail background={background} poster={video} video={video} />
+            <Typograph.Caption>{category}</Typograph.Caption>
+            <Typograph.Title>{project}</Typograph.Title>
+            <Typograph.Caption>{caption}</Typograph.Caption>
           </a>
         </Link>
       </Container>

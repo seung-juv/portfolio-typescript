@@ -16,9 +16,6 @@ const Container = styled.button`
   &:hover {
     background-color: ${({ theme }) => theme.blackColor}75;
   }
-  @media screen and (max-width: 768px) {
-    display: none;
-  }
 `;
 
 const Dark = (props: React.HTMLAttributes<HTMLButtonElement>): React.ReactElement => {

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import LogoAnimation from '../atoms/LogoAnimation';
+import Icon from '../atoms/Icon';
 
 const Container = styled.div`
   padding-top: 35vh;
@@ -31,7 +31,7 @@ const Content = styled.span`
 const MainTitle = (): React.ReactElement => {
   return (
     <Container>
-      <LogoAnimation />
+      <Icon.Logo size={3.2} />
       <Title>Design + Front-end + Back-end</Title>
       <Content>‘Seung Ju’ is creative design and develop.</Content>
     </Container>

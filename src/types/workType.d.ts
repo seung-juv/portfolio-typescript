@@ -3,7 +3,7 @@ export type WorkType = {
   type: 'web' | 'app' | string;
   project: string;
   background: string;
-  thumb: string;
+  video: string;
   category: string;
   caption: string;
   meta: string[];

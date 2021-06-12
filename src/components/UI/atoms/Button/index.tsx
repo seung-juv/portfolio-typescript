@@ -1,11 +1,9 @@
 import Default from './lib/Default';
 import Dark from './lib/Dark';
-import Social from './lib/Social';
-import Logo from './lib/Logo';
+import Navigation from './lib/Navigation';
 
 export default {
   Default,
   Dark,
-  Social,
-  Logo,
+  Navigation,
 };

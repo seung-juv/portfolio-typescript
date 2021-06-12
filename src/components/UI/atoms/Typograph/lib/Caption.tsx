@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import { CaptionProps, TypographProps } from '../Typograph';
+import { CaptionProps, TypographCustomStyleProps } from '../Typograph';
 
-const Text = styled.span<TypographProps>`
+const Text = styled.span<TypographCustomStyleProps>`
   font-size: ${({ fontSize }) => fontSize ?? '1.4rem'};
   font-weight: 300;
   color: ${({ theme, color }) => color ?? theme.darkGreyColor};

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import DarkButton from '../atoms/Button/lib/Dark';
-import Logo from '../atoms/Button/lib/Logo';
+import Icon from '../atoms/Icon';
 import ScrollLine from '../atoms/Layout/ScrollLine';
 
 const Container = styled.header`
@@ -28,7 +28,7 @@ const Container = styled.header`
 
 const Header = (): React.ReactElement => (
   <Container>
-    <Logo />
+    <Icon.Favicon />
     <ScrollLine />
     <DarkButton />
   </Container>

@@ -2,8 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { gsap } from 'gsap';
 import GlobalNavigationBar from '#components/UI/organisms/GlobalNavigationBar';
-import { Favicon } from '#components/UI/atoms/Icon';
 import useScroll from '#hooks/useScroll';
+import Icon from '#components/UI/atoms/Icon';
 
 interface MenuProps {
   isVisible: boolean;
@@ -55,7 +55,7 @@ const Menu = ({ isVisible }: MenuProps): React.ReactElement => {
     <Container ref={containerRef}>
       <GlobalNavigationBar isVisible={isVisible} />
       <Shadow>
-        <Favicon size={100} />
+        <Icon.Favicon size={100} />
       </Shadow>
     </Container>
   );
