@@ -1,6 +1,6 @@
 import React from 'react';
 import { Story } from '@storybook/react';
-import Button from '#components/UI/atoms/Button';
+import Button from '#components/Button';
 
 export default {
   title: 'UI/atoms/Button',

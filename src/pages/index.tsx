@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import MainTitle from '#components/UI/organisms/MainTitle';
-import MainProjects from '#components/UI/organisms/MainProjects';
+import MainTitle from '#components/Layout/MainTitle';
+import Project from '#components/Project';
 
 const Container = styled.div`
   width: 80%;
@@ -15,7 +15,7 @@ const Home = (): React.ReactElement => {
   return (
     <Container>
       <MainTitle />
-      <MainProjects />
+      <Project.List />
     </Container>
   );
 };

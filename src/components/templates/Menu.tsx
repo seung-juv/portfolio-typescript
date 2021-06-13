@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import { gsap } from 'gsap';
-import GlobalNavigationBar from '#components/UI/organisms/GlobalNavigationBar';
+import GlobalNavigationBar from '#components/Layout/GlobalNavigationBar';
 import useScroll from '#hooks/useScroll';
-import Icon from '#components/UI/atoms/Icon';
+import Icon from '#components/Icon';
 
 interface MenuProps {
   isVisible: boolean;

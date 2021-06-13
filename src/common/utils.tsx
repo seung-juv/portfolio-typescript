@@ -1,18 +1,18 @@
 import React from 'react';
-import { ReactIcon, Graphql, PrismaIcon, FirebaseIcon } from '#components/UI/atoms/Icon';
+import Icon from '#components/UI/atoms/Icon';
 
 export const getIcon = (tool: string, size?: number): React.ReactElement | null => {
   switch (tool) {
     case 'React':
-      return <ReactIcon size={size} />;
+      return <Icon.React size={size} />;
     case 'React-Native':
-      return <ReactIcon size={size} />;
+      return <Icon.React size={size} />;
     case 'GraphQL':
-      return <Graphql size={size} />;
+      return <Icon.Graphql size={size} />;
     case 'Prisma':
-      return <PrismaIcon size={size} />;
+      return <Icon.Prisma size={size} />;
     case 'Firebase':
-      return <FirebaseIcon size={size} />;
+      return <Icon.Firebase size={size} />;
     default:
       return null;
   }

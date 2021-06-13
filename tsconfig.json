@@ -32,6 +32,7 @@
       "#store/*": ["./store/*"],
       "#data/*": ["./data/*"],
       "#apis/*": ["./apis/*"],
+      "#common/*": ["./common/*"],
       "#/*": ["./*"]
     },
     "rootDir": "."

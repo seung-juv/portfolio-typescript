@@ -91,6 +91,10 @@
           "rootPathPrefix": "#apis/"
         },
         {
+          "rootPathSuffix": "./src/common",
+          "rootPathPrefix": "#common/"
+        },
+        {
           "rootPathSuffix": "./src",
           "rootPathPrefix": "#/"
         }
