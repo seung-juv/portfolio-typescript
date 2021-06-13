@@ -2,7 +2,6 @@ import React from 'react';
 import Link from 'next/link';
 import styled from 'styled-components';
 import { useQuery } from '@apollo/client';
-import { PLATFORM_TYPE } from '#common/defines';
 import Typograph from '#components/Typograph';
 import Thumbnail from '#components/Thumbnail';
 import { ProjectProps } from '#apis/project/project';
