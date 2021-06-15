@@ -7,7 +7,7 @@ type OnChangeType =
   | React.ChangeEvent<HTMLTextAreaElement>
   | React.ChangeEvent<HTMLSelectElement>;
 
-interface InputReturnProps<T = any> {
+export interface InputReturnProps<T = any> {
   value: StateType<T>;
   onChange: React.ChangeEventHandler;
 }

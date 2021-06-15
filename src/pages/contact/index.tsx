@@ -1,10 +1,12 @@
 import React from 'react';
 import Head from 'next/head';
 import styled from 'styled-components';
-import useInput from '#hooks/useInput';
+import useInput, { InputReturnProps } from '#hooks/useInput';
 import Input from '#components/Input';
 import Button from '#components/Button';
 import Form from '#components/Form';
+import { useMutation } from '@apollo/client';
+import { SEND_MAIL } from '#apis/mail';
 
 const Container = styled.div`
   width: 60%;
@@ -45,14 +47,47 @@ const Submit = styled(Button.Default)`
 `;
 
 const Contact = (): React.ReactElement => {
-  const name = useInput('');
-  const email = useInput('');
-  const phone = useInput('');
-  const content = useInput('');
+  const name: InputReturnProps<string> = useInput('');
+  const email: InputReturnProps<string> = useInput('');
+  const phone: InputReturnProps<string> = useInput('');
+  const content: InputReturnProps<string> = useInput('');
+  const [sendMail, { loading }] = useMutation(SEND_MAIL);
 
-  const onSubmit = (event: React.SyntheticEvent): void => {
+  const handleSendMail = () => {
+    return sendMail({
+      variables: {
+        from: 'kingsky32@gmail.com',
+        to: 'kingsky32@gmail.com',
+        subject: '[Portfolio] Contact Test',
+        text: `${name.value}, ${email.value}, ${phone.value}, ${content.value}`,
+      },
+    });
+  };
+
+  const onSubmit = async (event: React.SyntheticEvent) => {
     event.preventDefault();
-    // TODO SendMail
+    if (name.value.length === 0) {
+      alert('이름을 입력해주세요.');
+      return;
+    }
+    if (email.value.length === 0) {
+      alert('이메일을 입력해주세요.');
+      return;
+    }
+    if (phone.value.length === 0) {
+      alert('전화번호 입력해주세요.');
+      return;
+    }
+    if (content.value.length === 0) {
+      alert('내용을 입력해주세요.');
+      return;
+    }
+    try {
+      await handleSendMail();
+    } catch (error) {
+      console.warn(error);
+      alert(error);
+    }
   };
 
   return (

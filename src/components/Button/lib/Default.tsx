@@ -9,6 +9,7 @@ const Container = styled.button`
   color: #ffffff;
   font-size: 1.43rem;
   border-radius: 0.4rem;
+  cursor: pointer;
   ${({ theme }) => theme.transition};
   &:hover {
     background-color: ${({ theme }) => theme.blueHoverColor};
