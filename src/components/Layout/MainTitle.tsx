@@ -6,9 +6,6 @@ import Typograph from '#components/Typograph';
 const Container = styled.div`
   display: flex;
   flex-flow: column nowrap;
-  @media screen and (max-width: 1024px) {
-    padding-top: 25vh;
-  }
 `;
 
 const Title = styled(Typograph.Title)`

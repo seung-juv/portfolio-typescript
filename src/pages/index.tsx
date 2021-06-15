@@ -14,7 +14,10 @@ const Container = styled.div`
 `;
 
 const TitleContainer = styled.section`
-  margin: 35vh 10% 15rem;
+  padding: 35vh 10% 15rem;
+  @media screen and (max-width: 1024px) {
+    padding-top: 25vh;
+  }
 `;
 
 const ProjectContainer = styled.section`
