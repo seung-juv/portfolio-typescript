@@ -2,8 +2,11 @@ import React from 'react';
 import { Url } from 'url';
 import Button from './index';
 
+export type LoadingType = boolean | undefined;
+
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children?: React.ReactNode;
+  loading?: LoadingType;
 }
 
 export interface NavigationCustomStyleProps {

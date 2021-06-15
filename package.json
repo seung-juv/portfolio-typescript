@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@apollo/client": "^3.3.20",
+    "add": "^2.0.6",
     "dotenv-load": "^2.0.0",
     "graphql": "^15.5.0",
     "gsap": "^3.6.0",
@@ -22,11 +23,13 @@
     "react-dom": "17.0.1",
     "react-gsap": "^2.2.1",
     "react-scripts": "^4.0.2",
+    "react-toastify": "^7.0.4",
     "react-transition-group": "^4.4.1",
     "sass": "^1.32.10",
     "styled-components": "^5.2.1",
     "styled-reset": "^4.3.4",
-    "use-dark-mode": "^2.3.1"
+    "use-dark-mode": "^2.3.1",
+    "yarn": "^1.22.10"
   },
   "devDependencies": {
     "@babel/core": "^7.12.13",

@@ -9,16 +9,14 @@ type OnChangeType =
 
 export interface InputReturnProps<T = any> {
   value: StateType<T>;
-  onChange: React.ChangeEventHandler;
+  onChange: React.ChangeEventHandler | any;
 }
 
 const useInput = (initialState?: StateType): InputReturnProps => {
   const [value, setValue] = React.useState<StateType>(initialState);
 
   const onChange = React.useCallback((e: OnChangeType): void => {
-    const {
-      target: { value },
-    } = e;
+    const { value } = e?.target ?? {};
     setValue(value ?? e);
   }, []);
 

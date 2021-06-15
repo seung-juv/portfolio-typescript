@@ -1,11 +1,12 @@
 import React from 'react';
 import Head from 'next/head';
 import styled from 'styled-components';
+import { useMutation } from '@apollo/client';
+import { toast } from 'react-toastify';
 import useInput, { InputReturnProps } from '#hooks/useInput';
 import Input from '#components/Input';
 import Button from '#components/Button';
 import Form from '#components/Form';
-import { useMutation } from '@apollo/client';
 import { SEND_MAIL } from '#apis/mail';
 
 const Container = styled.div`
@@ -66,27 +67,35 @@ const Contact = (): React.ReactElement => {
 
   const onSubmit = async (event: React.SyntheticEvent) => {
     event.preventDefault();
+    if (loading) {
+      return;
+    }
     if (name.value.length === 0) {
-      alert('이름을 입력해주세요.');
+      toast.error('Please type your name.');
       return;
     }
     if (email.value.length === 0) {
-      alert('이메일을 입력해주세요.');
+      toast.error('Please type your email.');
       return;
     }
     if (phone.value.length === 0) {
-      alert('전화번호 입력해주세요.');
+      toast.error('Please type your phone.');
       return;
     }
     if (content.value.length === 0) {
-      alert('내용을 입력해주세요.');
+      toast.error('Please type your content.');
       return;
     }
     try {
       await handleSendMail();
+      toast.success('Mail transfer was successful.');
+      name.onChange('');
+      email.onChange('');
+      phone.onChange('');
+      content.onChange('');
     } catch (error) {
       console.warn(error);
-      alert(error);
+      toast.error(`${error}`);
     }
   };
 
@@ -115,7 +124,9 @@ const Contact = (): React.ReactElement => {
           <Input.Textarea {...content} id='content' rows={7} placeholder='Content' />
         </FormRow>
 
-        <Submit type='submit'>Submit</Submit>
+        <Submit type='submit' loading={loading}>
+          Submit
+        </Submit>
       </FormContainer>
     </Container>
   );

@@ -19,7 +19,6 @@
     "no-use-before-define": "off",
     "@typescript-eslint/no-use-before-define": ["error"],
     "react/jsx-filename-extension": [2, { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
-    "no-inline-styles/no-inline-styles": 2,
     "import/extensions": "off",
     "react/prop-types": 0,
     "react/jsx-wrap-multilines": 0,
@@ -53,8 +52,10 @@
     "react/no-array-index-key": 0,
     "@typescript-eslint/ban-types": 0,
     "jsx-a11y/anchor-is-valid": 0,
+    "no-inline-styles/no-inline-styles": 0,
     "@typescript-eslint/no-explicit-any": 0,
     "@typescript-eslint/no-empty-function": 0,
+    "no-console": 0,
     "no-alert": 0
   },
   "settings": {

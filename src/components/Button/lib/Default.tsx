@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
-import { ButtonProps } from '../Button';
+import { ButtonProps, LoadingType } from '../Button';
 
-const Container = styled.button`
+const Container = styled.button<{ loading: LoadingType }>`
   padding: 1.2rem 1.8rem;
   height: 4rem;
-  background-color: ${({ theme }) => theme.blueColor};
+  background-color: ${({ theme, loading }) => (loading ? theme.blueHoverColor : theme.blueColor)};
   color: #ffffff;
   font-size: 1.43rem;
   border-radius: 0.4rem;
@@ -16,8 +16,12 @@ const Container = styled.button`
   }
 `;
 
-const Default = ({ children, ...props }: ButtonProps): React.ReactElement => {
-  return <Container {...props}>{children}</Container>;
+const Default = ({ children, loading, ...props }: ButtonProps): React.ReactElement => {
+  return (
+    <Container loading={loading} {...props}>
+      {children}
+    </Container>
+  );
 };
 
 Default.defaultProps = {
