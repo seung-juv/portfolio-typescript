@@ -1,29 +1,28 @@
 import React from 'react';
 
-type stateType = string | number | readonly string[] | undefined;
+type StateType<T = string | number | readonly string[] | undefined> = T;
 
-type onChangeType =
+type OnChangeType =
   | React.ChangeEvent<HTMLInputElement>
   | React.ChangeEvent<HTMLTextAreaElement>
   | React.ChangeEvent<HTMLSelectElement>;
 
-type inputType = {
-  value: stateType;
+interface InputReturnProps<T = any> {
+  value: StateType<T>;
   onChange: React.ChangeEventHandler;
-  setValue: React.Dispatch<React.SetStateAction<stateType>>;
-};
+}
 
-const useInput = (initialState?: stateType): inputType => {
-  const [value, setValue] = React.useState<stateType>(initialState);
+const useInput = (initialState?: StateType): InputReturnProps => {
+  const [value, setValue] = React.useState<StateType>(initialState);
 
-  const onChange = React.useCallback((e: onChangeType): void => {
+  const onChange = React.useCallback((e: OnChangeType): void => {
     const {
       target: { value },
     } = e;
-    setValue(value);
+    setValue(value ?? e);
   }, []);
 
-  return { value, onChange, setValue };
+  return { value, onChange };
 };
 
 export default useInput;

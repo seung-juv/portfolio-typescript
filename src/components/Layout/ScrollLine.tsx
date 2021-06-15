@@ -22,16 +22,22 @@ const ScrollLine = (props: React.HTMLAttributes<HTMLDivElement>): React.ReactEle
   const router = useRouter();
 
   const getScrollValue = React.useCallback(() => {
-    const scrollPosition = document.documentElement.scrollTop;
-    const windowHeight = window.innerHeight;
-    const fullHeight = document.body.scrollHeight;
-    const scrollWidth = (scrollPosition / (windowHeight - fullHeight)) * -100 - 100;
+    const { scrollTop } = document.documentElement;
+    const { innerHeight } = window;
+    const { scrollHeight } = document.body;
+
+    if (innerHeight >= scrollHeight) {
+      setScrollValue(0);
+      return;
+    }
+
+    const scrollWidth = (scrollTop / (innerHeight - scrollHeight)) * -100 - 100;
     setScrollValue(scrollWidth);
   }, []);
 
   React.useEffect(() => {
     getScrollValue();
-    router.events.on('routeChangeStart', getScrollValue);
+    router.events.on('routeChangeComplete', getScrollValue);
     window.addEventListener('scroll', getScrollValue);
     const unsubscribe = () => {
       window.removeEventListener('scroll', getScrollValue);
@@ -44,10 +50,6 @@ const ScrollLine = (props: React.HTMLAttributes<HTMLDivElement>): React.ReactEle
       <Line style={{ top: `${scrollValue}%` }} />
     </Container>
   );
-};
-
-ScrollLine.defaultProps = {
-  className: '',
 };
 
 export default ScrollLine;
