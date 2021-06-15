@@ -1,10 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { gsap } from 'gsap';
-
-export interface MenuButtonProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
-  isOpen: boolean;
-}
+import { MenuButtonProps } from '../Button';
 
 interface menuProps {
   top: HTMLSpanElement | null;
@@ -39,7 +36,7 @@ const Line = styled.span`
   }
 `;
 
-const MenuButton = ({ isOpen, ...props }: MenuButtonProps): React.ReactElement => {
+const Menu = ({ isOpen, ...props }: MenuButtonProps): React.ReactElement => {
   const [timeline] = React.useState(gsap.timeline({ paused: true }));
 
   const menu = React.useRef<menuProps>({
@@ -106,4 +103,4 @@ const MenuButton = ({ isOpen, ...props }: MenuButtonProps): React.ReactElement =
   );
 };
 
-export default MenuButton;
+export default Menu;

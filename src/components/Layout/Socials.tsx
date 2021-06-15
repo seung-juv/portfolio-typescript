@@ -1,13 +1,8 @@
-import Link from 'next/link';
-import React, { HTMLAttributes } from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import { Url } from 'url';
 import Icon from '#components/Icon';
-
-interface SocialProps extends HTMLAttributes<HTMLLIElement> {
-  href?: Url | string;
-  icon: React.ReactNode | React.ReactElement;
-}
+import Button from '#components/Button';
+import { SocialProps } from '#components/Button/Button';
 
 type SocialItemsType = Array<SocialProps>;
 
@@ -21,15 +16,13 @@ const Container = styled.ul`
   z-index: 10;
 `;
 
-const Social = ({ href, icon }: SocialProps): React.ReactElement => {
-  return (
-    <Link href={href ?? ''}>
-      <a>{icon}</a>
-    </Link>
-  );
-};
+const Social = styled.li`
+  &:not(:last-child) {
+    margin-right: 2rem;
+  }
+`;
 
-const Socials = (props: HTMLAttributes<HTMLUListElement>): React.ReactElement => {
+const Socials = (props: React.HTMLAttributes<HTMLUListElement>): React.ReactElement => {
   const items: SocialItemsType = React.useMemo(
     () => [
       {
@@ -59,7 +52,9 @@ const Socials = (props: HTMLAttributes<HTMLUListElement>): React.ReactElement =>
     <Container {...props}>
       {items?.map(
         (item: SocialProps, index: number): React.ReactElement => (
-          <Social key={item.id ?? index} {...item} />
+          <Social>
+            <Button.Social key={item.id ?? index} {...item} />
+          </Social>
         )
       )}
     </Container>

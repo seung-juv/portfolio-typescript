@@ -15,7 +15,7 @@ const Anchor = styled.a<NavigationCustomStyleProps>`
     display: block;
     position: absolute;
     width: 0;
-    height: 7%;
+    height: 10%;
     top: 5%;
     bottom: 0;
     left: 0;
@@ -31,9 +31,9 @@ const Anchor = styled.a<NavigationCustomStyleProps>`
   }
 `;
 
-const Navigation = ({ href, children, ...props }: NavigationProps): React.ReactElement => (
+const Navigation = ({ href, label, ...props }: NavigationProps): React.ReactElement => (
   <Link href={href ?? ''}>
-    <Anchor {...props}>{children}</Anchor>
+    <Anchor {...props}>{label}</Anchor>
   </Link>
 );
 

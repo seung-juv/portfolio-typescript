@@ -1,7 +1,7 @@
 import React from 'react';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
-import Layout from '#components/templates/Layout';
+import Layout from '#components/Layout/Layout';
 
 const App: React.FC<AppProps> = ({ Component, pageProps }: AppProps) => {
   return (

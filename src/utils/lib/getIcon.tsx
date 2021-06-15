@@ -1,7 +1,7 @@
 import React from 'react';
-import Icon from '#components/UI/atoms/Icon';
+import Icon from '#components/Icon';
 
-export const getIcon = (tool: string, size?: number): React.ReactElement | null => {
+const getIcon = (tool: string, size?: number): React.ReactElement | null => {
   switch (tool) {
     case 'React':
       return <Icon.React size={size} />;
@@ -17,3 +17,5 @@ export const getIcon = (tool: string, size?: number): React.ReactElement | null 
       return null;
   }
 };
+
+export default getIcon;

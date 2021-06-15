@@ -33,6 +33,7 @@
       "#data/*": ["./data/*"],
       "#apis/*": ["./apis/*"],
       "#common/*": ["./common/*"],
+      "#utils/*": ["./utils/*"],
       "#/*": ["./*"]
     },
     "rootDir": "."

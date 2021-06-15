@@ -17,7 +17,16 @@ export interface NavigationProps
   extends React.AnchorHTMLAttributes<HTMLAnchorElement>,
     NavigationCustomStyleProps {
   href?: Url | string;
-  children?: React.ReactNode | string;
+  label?: React.ReactNode | string;
 }
 
 export type ButtonType = keyof Button;
+
+export interface MenuButtonProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
+  isOpen: boolean;
+}
+
+export interface SocialProps extends React.HTMLAttributes<HTMLLIElement> {
+  href?: Url | string;
+  icon: React.ReactNode | React.ReactElement;
+}

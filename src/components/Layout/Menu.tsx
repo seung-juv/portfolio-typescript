@@ -40,9 +40,11 @@ const Menu = ({ isVisible }: MenuProps): React.ReactElement => {
   const [timeline] = React.useState(gsap.timeline({ paused: true }));
   const containerRef = React.useRef(null);
   const { enableScroll, disableScroll } = useScroll();
+
   React.useEffect(() => {
     timeline.to(containerRef.current, { duration: 0.2, autoAlpha: 0, ease: 'power2' }, 0).reverse();
   }, []);
+
   React.useEffect(() => {
     timeline.reversed(isVisible);
     if (isVisible) {
@@ -51,9 +53,10 @@ const Menu = ({ isVisible }: MenuProps): React.ReactElement => {
       enableScroll();
     }
   }, [isVisible, timeline]);
+
   return (
     <Container ref={containerRef}>
-      <GlobalNavigationBar isVisible={isVisible} />
+      <GlobalNavigationBar />
       <Shadow>
         <Icon.Favicon size={100} />
       </Shadow>

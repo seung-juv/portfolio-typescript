@@ -95,6 +95,10 @@
           "rootPathPrefix": "#common/"
         },
         {
+          "rootPathSuffix": "./src/utils",
+          "rootPathPrefix": "#utils/"
+        },
+        {
           "rootPathSuffix": "./src",
           "rootPathPrefix": "#/"
         }

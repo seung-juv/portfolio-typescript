@@ -3,10 +3,6 @@ import styled from 'styled-components';
 import Navigations from '#components/Layout/Navigations';
 import Socials from './Socials';
 
-interface GlobalNavigationBarProps {
-  isVisible: boolean;
-}
-
 const Container = styled.nav`
   height: 100%;
   position: relative;
@@ -16,10 +12,10 @@ const Container = styled.nav`
   justify-content: space-between;
 `;
 
-const GlobalNavigationBar = ({ isVisible }: GlobalNavigationBarProps): React.ReactElement => {
+const GlobalNavigationBar = (): React.ReactElement => {
   return (
     <Container>
-      {isVisible && <Navigations />}
+      <Navigations />
       <Socials />
     </Container>
   );
