@@ -23,10 +23,9 @@ const Container = styled.div`
       transform: scale(0.95);
     }
   }
-`;
-
-const Title = styled(Typograph.Title)`
-  margin-right: 4rem;
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 const TypeContainer = styled.div`
@@ -50,6 +49,11 @@ const TypeContainer = styled.div`
 
 const MetaContainer = styled.div`
   margin-top: 2rem;
+  display: flex;
+`;
+
+const Title = styled(Typograph.Title)`
+  margin-right: 4rem;
 `;
 
 const Item = React.forwardRef<HTMLDivElement, ProjectProps>(

@@ -5,6 +5,7 @@ import Header from '#components/Layout/Header';
 import Menu from '#components/Layout/Menu';
 import Providers from '#components/Layout/Providers';
 import Button from '#components/Button';
+import MenuContext from '#context/MenuContext';
 
 interface LayoutType {
   children: React.ReactNode;
@@ -16,8 +17,11 @@ const Wrapper = styled.div`
 
 const MenuButton = styled(Button.Menu)`
   position: fixed;
+  top: 4.5rem;
   right: 5rem;
-  top: 4rem;
+  @media screen and (max-width: 1024px) {
+    right: 2rem;
+  }
 `;
 
 const Layout = ({ children }: LayoutType): React.ReactElement => {
@@ -26,13 +30,15 @@ const Layout = ({ children }: LayoutType): React.ReactElement => {
 
   return (
     <Providers>
-      <Menu isVisible={isVisibleMenu} />
-      <Wrapper>
-        <Header />
-        <MenuButton onClick={toggleMenu} isOpen={isVisibleMenu} />
-        <main>{children}</main>
-        <Footer />
-      </Wrapper>
+      <MenuContext.Provider value={{ isVisible: isVisibleMenu, setIsVisible: setIsVisibleMenu }}>
+        <Menu />
+        <Wrapper>
+          <Header />
+          <MenuButton onClick={toggleMenu} isOpen={isVisibleMenu} />
+          <main>{children}</main>
+          <Footer />
+        </Wrapper>
+      </MenuContext.Provider>
     </Providers>
   );
 };

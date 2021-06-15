@@ -4,6 +4,7 @@ import { CaptionProps, TypographCustomStyleProps } from '../Typograph';
 
 const Text = styled.span<TypographCustomStyleProps>`
   font-size: ${({ fontSize }) => fontSize ?? '1.4rem'};
+  line-height: 1.4;
   font-weight: 300;
   color: ${({ theme, color }) => color ?? theme.darkGreyColor};
 `;

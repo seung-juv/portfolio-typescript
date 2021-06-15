@@ -54,6 +54,10 @@
             "rootPathPrefix": "#utils/"
           },
           {
+            "rootPathSuffix": "./src/context",
+            "rootPathPrefix": "#context/"
+          },
+          {
             "rootPathSuffix": "./src",
             "rootPathPrefix": "#/"
           }

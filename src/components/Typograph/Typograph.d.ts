@@ -20,3 +20,8 @@ export interface SubTitleProps
     TypographCustomStyleProps {
   children?: React.ReactNode | string;
 }
+
+export interface ContactProps extends React.HTMLAttributes<HTMLDivElement> {
+  icon: React.ReactElement | React.ReactNode;
+  label: string;
+}

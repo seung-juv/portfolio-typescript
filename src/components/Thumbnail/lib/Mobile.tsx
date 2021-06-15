@@ -11,6 +11,12 @@ const Wrapper = styled.div<{ background: string }>`
   background-repeat: no-repeat;
   position: relative;
   overflow: hidden;
+  @media screen and (max-width: 1440px) {
+    width: 100%;
+  }
+  @media screen and (max-width: 768px) {
+    height: 60rem;
+  }
 `;
 
 const Container = styled.div`

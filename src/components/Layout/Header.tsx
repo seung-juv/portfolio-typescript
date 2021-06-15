@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Link from 'next/link';
 import Icon from '#components/Icon';
 import ScrollLine from '#components/Layout/ScrollLine';
-import DarkButton from '../Button/lib/Dark';
+import Button from '../Button';
 
 const Container = styled.header`
   width: 6rem;
@@ -27,6 +27,21 @@ const Container = styled.header`
   }
 `;
 
+const ScrollContainer = styled.div`
+  flex: 1;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+`;
+
+const Scroll = styled(ScrollLine)`
+  flex: 1;
+  margin-bottom: 4rem;
+`;
+
 const Header = (): React.ReactElement => (
   <Container>
     <Link href='/'>
@@ -34,8 +49,10 @@ const Header = (): React.ReactElement => (
         <Icon.Favicon size={4.8} />
       </a>
     </Link>
-    <ScrollLine />
-    <DarkButton />
+    <ScrollContainer>
+      <Scroll />
+      <Button.Dark />
+    </ScrollContainer>
   </Container>
 );
 

@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import MainTitle from '#components/Layout/MainTitle';
 import Project from '#components/Project';
+import Button from '#components/Button';
+import Contacts from '#components/Layout/Contacts';
 
 const Container = styled.div`
   width: 80%;
@@ -11,11 +13,39 @@ const Container = styled.div`
   }
 `;
 
+const TitleContainer = styled.section`
+  margin: 35vh 10% 15rem;
+`;
+
+const ProjectContainer = styled.section`
+  display: flex;
+  flex-flow: column nowrap;
+  margin-bottom: 20rem;
+`;
+
+const MoreButton = styled(Button.Link)`
+  margin-top: 20rem;
+  align-self: center;
+`;
+
+const ContactsContainer = styled.section`
+  max-width: 60rem;
+  margin: 0 auto;
+`;
+
 const Home = (): React.ReactElement => {
   return (
     <Container>
-      <MainTitle />
-      <Project.List />
+      <TitleContainer>
+        <MainTitle />
+      </TitleContainer>
+      <ProjectContainer>
+        <Project.List />
+        <MoreButton href='/works'>MORE</MoreButton>
+      </ProjectContainer>
+      <ContactsContainer>
+        <Contacts />
+      </ContactsContainer>
     </Container>
   );
 };

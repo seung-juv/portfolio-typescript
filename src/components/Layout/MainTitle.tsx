@@ -4,10 +4,8 @@ import Icon from '#components/Icon';
 import Typograph from '#components/Typograph';
 
 const Container = styled.div`
-  padding-top: 35vh;
   display: flex;
   flex-flow: column nowrap;
-  margin: 0 10% 15rem;
   @media screen and (max-width: 1024px) {
     padding-top: 25vh;
   }

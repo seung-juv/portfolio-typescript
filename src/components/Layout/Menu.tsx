@@ -4,10 +4,7 @@ import { gsap } from 'gsap';
 import GlobalNavigationBar from '#components/Layout/GlobalNavigationBar';
 import useScroll from '#hooks/useScroll';
 import Icon from '#components/Icon';
-
-interface MenuProps {
-  isVisible: boolean;
-}
+import { useMenu } from '#context/MenuContext';
 
 const Container = styled.div`
   width: 100vw;
@@ -30,15 +27,20 @@ const Shadow = styled.div`
   position: absolute;
   bottom: -15%;
   right: -5%;
-  @media screen and (max-width: 425px) {
-    width: 95vw;
-    height: 95vw;
+  @media screen and (max-width: 768px) {
+    bottom: -25%;
+    right: -35%;
+  }
+  @media screen and (max-width: 640px) {
+    bottom: -35%;
+    right: -100%;
   }
 `;
 
-const Menu = ({ isVisible }: MenuProps): React.ReactElement => {
+const Menu = (props: React.HTMLAttributes<HTMLDivElement>): React.ReactElement => {
   const [timeline] = React.useState(gsap.timeline({ paused: true }));
   const containerRef = React.useRef(null);
+  const [isVisible] = useMenu();
   const { enableScroll, disableScroll } = useScroll();
 
   React.useEffect(() => {
@@ -55,7 +57,7 @@ const Menu = ({ isVisible }: MenuProps): React.ReactElement => {
   }, [isVisible, timeline]);
 
   return (
-    <Container ref={containerRef}>
+    <Container ref={containerRef} {...props}>
       <GlobalNavigationBar />
       <Shadow>
         <Icon.Favicon size={100} />

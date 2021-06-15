@@ -52,8 +52,8 @@ const Socials = (props: React.HTMLAttributes<HTMLUListElement>): React.ReactElem
     <Container {...props}>
       {items?.map(
         (item: SocialProps, index: number): React.ReactElement => (
-          <Social>
-            <Button.Social key={item.id ?? index} {...item} />
+          <Social key={item.id ?? index}>
+            <Button.Social {...item} />
           </Social>
         )
       )}

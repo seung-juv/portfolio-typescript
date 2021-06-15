@@ -10,6 +10,9 @@ const Container = styled.nav`
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-between;
+  @media screen and (max-width: 768px) {
+    align-items: center;
+  }
 `;
 
 const GlobalNavigationBar = (): React.ReactElement => {

@@ -16,7 +16,6 @@ const SubTitle = styled(Button.Link)`
 const Container = styled.div`
   display: flex;
   flex-flow: column nowrap;
-  margin-bottom: 20rem;
   > div {
     &:nth-child(2n - 1) {
       align-self: flex-end;

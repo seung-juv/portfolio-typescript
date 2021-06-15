@@ -53,7 +53,8 @@
     "react/no-array-index-key": 0,
     "@typescript-eslint/ban-types": 0,
     "jsx-a11y/anchor-is-valid": 0,
-    "@typescript-eslint/no-explicit-any": 0
+    "@typescript-eslint/no-explicit-any": 0,
+    "@typescript-eslint/no-empty-function": 0
   },
   "settings": {
     "import/resolver": {
@@ -97,6 +98,10 @@
         {
           "rootPathSuffix": "./src/utils",
           "rootPathPrefix": "#utils/"
+        },
+        {
+          "rootPathSuffix": "./src/context",
+          "rootPathPrefix": "#context/"
         },
         {
           "rootPathSuffix": "./src",

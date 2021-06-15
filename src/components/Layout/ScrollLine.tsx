@@ -1,15 +1,12 @@
+import { useRouter } from 'next/dist/client/router';
 import React from 'react';
 import styled from 'styled-components';
 
 const Container = styled.div`
   width: 1px;
-  flex: 1;
   overflow: hidden;
   position: relative;
   background-color: ${({ theme }) => theme.blackColor}15;
-  @media screen and (max-width: 768px) {
-    display: none;
-  }
 `;
 
 const Line = styled.span`
@@ -22,6 +19,8 @@ const Line = styled.span`
 
 const ScrollLine = (props: React.HTMLAttributes<HTMLDivElement>): React.ReactElement => {
   const [scrollValue, setScrollValue] = React.useState(0);
+  const router = useRouter();
+
   const getScrollValue = React.useCallback(() => {
     const scrollPosition = document.documentElement.scrollTop;
     const windowHeight = window.innerHeight;
@@ -31,7 +30,12 @@ const ScrollLine = (props: React.HTMLAttributes<HTMLDivElement>): React.ReactEle
   }, []);
 
   React.useEffect(() => {
-    const unsubscribe = window.addEventListener('scroll', getScrollValue);
+    getScrollValue();
+    router.events.on('routeChangeStart', getScrollValue);
+    window.addEventListener('scroll', getScrollValue);
+    const unsubscribe = () => {
+      window.removeEventListener('scroll', getScrollValue);
+    };
     return unsubscribe;
   }, []);
 

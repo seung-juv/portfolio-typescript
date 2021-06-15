@@ -1,8 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import Typograph from '#components/Typograph';
+import { useMenu } from '#context/MenuContext';
 
-const Container = styled.footer`
+const Container = styled.footer<{ isVisible: boolean }>`
   transform: rotate(270deg);
   position: fixed;
   display: block;
@@ -12,14 +13,16 @@ const Container = styled.footer`
   @media screen and (max-width: 1024px) {
     right: -9rem;
   }
-  @media screen and (max-width: 425px) {
-    display: none;
+  @media screen and (max-width: 1024px) {
+    display: ${({ isVisible }) => (isVisible ? 'block' : 'none')};
   }
 `;
 
 const Footer = (): React.ReactElement => {
+  const [isVisible] = useMenu();
+
   return (
-    <Container>
+    <Container isVisible={isVisible}>
       <Typograph.Caption>&copy;2021. Seung Ju PortFolio All rights reserved.</Typograph.Caption>
     </Container>
   );
