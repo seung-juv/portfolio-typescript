@@ -1,10 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 
-export interface ScrollLineProps {
-  className?: string;
-}
-
 const Container = styled.div`
   width: 1px;
   flex: 1;
@@ -16,22 +12,21 @@ const Container = styled.div`
   }
 `;
 
-const Line = styled.span<{ scrollValue: number }>`
+const Line = styled.span`
   display: block;
   width: 100%;
   height: 100%;
   position: absolute;
   background-color: ${({ theme }) => theme.blackColor};
-  top: ${({ scrollValue }) => scrollValue - 100}%;
 `;
 
-const ScrollLine = ({ className }: ScrollLineProps): React.ReactElement => {
+const ScrollLine = (props: React.HTMLAttributes<HTMLDivElement>): React.ReactElement => {
   const [scrollValue, setScrollValue] = React.useState(0);
   const getScrollValue = React.useCallback(() => {
     const scrollPosition = document.documentElement.scrollTop;
     const windowHeight = window.innerHeight;
     const fullHeight = document.body.scrollHeight;
-    const scrollWidth = (scrollPosition / (windowHeight - fullHeight)) * -100;
+    const scrollWidth = (scrollPosition / (windowHeight - fullHeight)) * -100 - 100;
     setScrollValue(scrollWidth);
   }, []);
 
@@ -41,8 +36,8 @@ const ScrollLine = ({ className }: ScrollLineProps): React.ReactElement => {
   }, []);
 
   return (
-    <Container className={className} aria-hidden='true'>
-      <Line scrollValue={scrollValue} />
+    <Container aria-hidden='true' {...props}>
+      <Line style={{ top: `${scrollValue}%` }} />
     </Container>
   );
 };
