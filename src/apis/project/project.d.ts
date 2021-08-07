@@ -1,3 +1,4 @@
+import { PayloadProps } from './../../../types/payload.d';
 export enum ProjectPlatformType {
   'web',
   'app',
@@ -35,6 +36,10 @@ export interface ProjectProps {
   updatedAt: Date;
 }
 
+export interface ProjectsPayload extends PayloadProps {
+  projects: ProjectProps[];
+}
+
 export interface GetProjectsData {
-  GetProjects: ProjectProps[];
+  projects: ProjectsPayload;
 }

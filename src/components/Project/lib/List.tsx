@@ -38,7 +38,7 @@ const List = (): React.ReactElement => {
     <Wrapper>
       <SubTitle href='/works'>Works</SubTitle>
       <Container>
-        {data?.GetProjects.map((item: ProjectProps): React.ReactElement => {
+        {data?.projects?.projects.map((item: ProjectProps): React.ReactElement => {
           return <Project.Item key={item.id} {...item} />;
         })}
       </Container>
