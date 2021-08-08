@@ -1,45 +1,24 @@
-import { PayloadProps } from './../../../types/payload.d';
-export enum ProjectPlatformType {
-  'web',
-  'app',
-}
-
-export enum ProjectTypeTypes {
-  'develop',
-  'design',
-}
-
-export enum ProjectToolTypes {
-  'react',
-  'react-native',
-  'graphql',
-  'prisma',
-  'firebase',
-  'styled-components',
-}
+import { CodeProps } from '#apis/code/code';
+import { FileProps } from '#apis/file/file';
 
 export interface ProjectProps {
   id: number;
   accountId: number;
-  type?: ProjectTypeTypes;
-  platform?: ProjectPlatformType;
+  type?: CodeProps;
+  platform?: CodeProps;
   title?: string;
-  caption?: string;
+  description?: string;
   meta?: string;
-  thumbnail?: number;
+  thumbnail?: FileProps;
   github?: string;
   page?: string;
-  tools?: ProjectToolTypes[];
+  tools?: CodeProps[];
   startAt?: Date;
   endAt?: Date;
   createdAt: Date;
   updatedAt: Date;
 }
 
-export interface ProjectsPayload extends PayloadProps {
-  projects: ProjectProps[];
-}
-
 export interface GetProjectsData {
-  projects: ProjectsPayload;
+  GetProjects: ProjectProps[];
 }

@@ -11,7 +11,9 @@ export interface TitleProps
   children?: React.ReactNode | string;
 }
 
-interface CaptionProps extends TypographCustomStyleProps, React.HTMLAttributes<HTMLSpanElement> {
+interface DescriptionProps
+  extends TypographCustomStyleProps,
+    React.HTMLAttributes<HTMLSpanElement> {
   children?: React.ReactNode | string;
 }
 

@@ -55,6 +55,7 @@
     "no-inline-styles/no-inline-styles": 0,
     "@typescript-eslint/no-explicit-any": 0,
     "@typescript-eslint/no-empty-function": 0,
+    "@typescript-eslint/no-empty-interface": 0,
     "no-console": 0,
     "no-alert": 0
   },

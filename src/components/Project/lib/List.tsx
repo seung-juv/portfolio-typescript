@@ -34,11 +34,12 @@ const List = (): React.ReactElement => {
   if (loading) {
     return <span>loading...</span>;
   }
+
   return (
     <Wrapper>
       <SubTitle href='/works'>Works</SubTitle>
       <Container>
-        {data?.projects?.projects.map((item: ProjectProps): React.ReactElement => {
+        {data?.GetProjects.map((item: ProjectProps): React.ReactElement => {
           return <Project.Item key={item.id} {...item} />;
         })}
       </Container>
