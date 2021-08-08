@@ -17,7 +17,6 @@ export const GET_PROJECTS = gql`
       description
       meta
       thumbnail {
-        id
         url
       }
       github
